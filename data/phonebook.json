@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Vert",
+    "host": "vert.synchro.net",
+    "port": 23,
+    "protocol": "telnet"
+  },
+  {
+    "name": "The Forgotten Realm",
+    "host": "tfr.synchro.net",
+    "port": 23,
+    "protocol": "telnet"
+  },
+  {
+    "name": "Hobby BBS",
+    "host": "bbs.foobar.net",
+    "port": 23,
+    "protocol": "telnet"
+  },
+  {
+    "name": "Shift Bits BBS",
+    "host": "bbs.shift-bits.com",
+    "port": 2003,
+    "protocol": "telnet"
+  }
+]

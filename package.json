@@ -1,0 +1,36 @@
+{
+  "name": "shift-term",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shift-Term: A modern BBS terminal emulator with a unique look.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.shift.term",
+    "productName": "Shift-Term",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "src/**/*",
+      "data/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "ShiftTerm-${version}-Setup.exe"
+    }
+  },
+  "dependencies": {
+    "@xterm/xterm": "^6.0.0",
+    "@xterm/addon-fit": "^0.11.0"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  }
+}

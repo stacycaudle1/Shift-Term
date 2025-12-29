@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shift-Term</title>
+  <link rel="stylesheet" href="../../node_modules/@xterm/xterm/css/xterm.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h1>Shift-Term</h1>
+      <section id="quickConnect">
+        <input id="hostInput" type="text" placeholder="Host (e.g. bbs.example.com)" />
+        <input id="portInput" type="number" min="1" max="65535" placeholder="Port" />
+        <button id="connectBtn">Connect</button>
+      </section>
+      <div id="inlineStatus" aria-live="polite"></div>
+      <h2>BBS Phonebook</h2>
+      <div id="phonebook"></div>
+      <div class="edit-controls">
+        <button id="addEntryBtn">Add</button>
+        <button id="editEntryBtn">Edit</button>
+        <button id="delEntryBtn">Delete</button>
+      </div>
+      <div class="controls">
+        <button id="disconnectBtn">Disconnect</button>
+        <label><input type="checkbox" id="loggingChk" /> Log session</label>
+      </div>
+    </aside>
+    <main id="terminalPane">
+      <div id="terminal"></div>
+      <div id="status"></div>
+    </main>
+  </div>
+  
+  <!-- Modal Dialog for Add/Edit Entry -->
+  <div id="entryModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitle">Add BBS Entry</h3>
+      <label>BBS Name:
+        <input type="text" id="modalName" placeholder="My Favorite BBS" />
+      </label>
+      <label>Host Address:
+        <input type="text" id="modalHost" placeholder="bbs.example.com" />
+      </label>
+      <label>Port:
+        <input type="number" id="modalPort" value="23" min="1" max="65535" />
+      </label>
+      <label>Notes:
+        <textarea id="modalNotes" placeholder="Optional notes about this BBS..." rows="3"></textarea>
+      </label>
+      <div class="modal-buttons">
+        <button id="modalCancel">Cancel</button>
+        <button id="modalSave">Save</button>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

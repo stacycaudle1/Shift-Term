@@ -1,0 +1,59 @@
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; background: #0b0e12; color: #cdd8e3; font-family: ui-monospace, Menlo, Consolas, monospace; }
+#terminal, .xterm { font-family: ShiftTermCP437, ui-monospace, Menlo, Consolas, monospace; }
+#app { display: grid; grid-template-columns: 350px 1fr; }
+#sidebar { border-right: 1px solid #1b2230; padding: 16px; background: #0f1318; display: flex; flex-direction: column; }
+#sidebar h1 { margin: 0 0 12px; font-size: 18px; color: #7bdff2; }
+#sidebar h2 { margin: 12px 0 6px; font-size: 14px; color: #9ad5e8; }
+#quickConnect { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+#quickConnect input { padding: 8px; background: #18202c; border: 1px solid #2b3a4f; color: #cdd8e3; }
+#quickConnect button { padding: 10px; background: #2b3a4f; border: 1px solid #7bdff2; color: #cdd8e3; cursor: pointer; font-weight: bold; }
+#quickConnect button:hover { background: #35465c; }
+#quickConnect button:disabled { opacity: 0.5; cursor: not-allowed; }
+#inlineStatus { margin: 6px 0 12px; font-size: 12px; color: #9ad5e8; min-height: 1.2em; }
+#phonebook { flex: 1; min-height: 100px; max-height: 300px; overflow-y: auto; margin-bottom: 12px; border: 1px solid #2b3a4f; background: #141a24; padding: 4px; }
+#phonebook::-webkit-scrollbar { width: 8px; }
+#phonebook::-webkit-scrollbar-track { background: #141a24; }
+#phonebook::-webkit-scrollbar-thumb { background: #35465c; border-radius: 4px; }
+#phonebook::-webkit-scrollbar-thumb:hover { background: #4a6a8a; }
+#phonebook button { width: 100%; margin: 2px 0; padding: 8px; background: #18202c; border: 1px solid #2b3a4f; color: #cdd8e3; cursor: pointer; text-align: left; }
+#phonebook button:hover { background: #1c2633; }
+.controls { margin-top: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.edit-controls { display: flex; gap: 4px; margin-top: 4px; position: relative; z-index: 100; }
+.edit-controls button { flex: 1; padding: 8px; font-size: 13px; cursor: pointer; background: #243142; border: 1px solid #35465c; color: #cdd8e3; pointer-events: auto; }
+.edit-controls button:hover { background: #2d4a5e; border-color: #7bdff2; }
+.edit-controls button:active { background: #1a2530; }
+
+/* Modal Dialog */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal.hidden { display: none; }
+.modal-content { background: #141a24; border: 2px solid #35465c; border-radius: 8px; padding: 20px; min-width: 300px; max-width: 400px; }
+.modal-content h3 { margin: 0 0 16px; color: #7bdff2; font-size: 16px; }
+.modal-content label { display: block; margin-bottom: 12px; color: #9ad5e8; font-size: 13px; }
+.modal-content input { width: 100%; margin-top: 4px; padding: 8px; background: #18202c; border: 1px solid #2b3a4f; color: #cdd8e3; font-size: 14px; }
+.modal-content input:focus { outline: none; border-color: #7bdff2; }
+.modal-content textarea { width: 100%; margin-top: 4px; padding: 8px; background: #18202c; border: 1px solid #2b3a4f; color: #cdd8e3; font-size: 14px; font-family: inherit; resize: vertical; }
+.modal-content textarea:focus { outline: none; border-color: #7bdff2; }
+.modal-buttons { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+.modal-buttons button { padding: 8px 16px; font-size: 13px; cursor: pointer; border-radius: 4px; }
+#modalCancel { background: #243142; border: 1px solid #35465c; color: #cdd8e3; }
+#modalCancel:hover { background: #2d4a5e; }
+#modalSave { background: #2b5278; border: 1px solid #7bdff2; color: #fff; }
+#modalSave:hover { background: #3a6a9a; }
+#terminalPane { position: relative; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; padding: 20px; background: #0a0c10; }
+#terminal { width: auto; height: auto; padding: 8px; background: #0b0e12; border: 2px solid #243142; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+#terminal .xterm { width: auto !important; height: auto !important; }
+#terminal .xterm-viewport { overflow-y: auto !important; }
+#status { position: absolute; right: 8px; bottom: 8px; padding: 6px 8px; background: rgba(20, 26, 34, 0.7); border: 1px solid #243142; font-size: 12px; border-radius: 6px; z-index: 10; }
+.xterm .xterm-helpers > div { font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+/* CP437 font wiring: place a CP437-compatible TTF/WOFF in assets/fonts and ensure the name below matches */
+@font-face {
+	font-family: 'ShiftTermCP437';
+	src: url('../../assets/fonts/ShiftTermCP437.woff2') format('woff2'),
+			 url('../../assets/fonts/ShiftTermCP437.woff') format('woff'),
+			 url('../../assets/fonts/ShiftTermCP437.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
