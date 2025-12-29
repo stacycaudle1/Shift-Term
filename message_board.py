@@ -38,7 +38,7 @@ class MessageBoard:
         except Exception as e:
             print(f"Error saving messages: {e}")
             
-    def display_boards(self):
+    def display_boards(self, current_user=None):
         """Display message boards"""
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -60,11 +60,11 @@ class MessageBoard:
             try:
                 board_idx = int(choice) - 1
                 if 0 <= board_idx < len(self.boards):
-                    self.view_board(self.boards[board_idx])
+                    self.view_board(self.boards[board_idx], current_user)
             except ValueError:
                 pass
                 
-    def view_board(self, board_name):
+    def view_board(self, board_name, current_user=None):
         """View messages in a board"""
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -89,7 +89,7 @@ class MessageBoard:
             if choice == 'Q':
                 break
             elif choice == 'P':
-                self.post_message(board_name)
+                self.post_message(board_name, current_user)
             else:
                 try:
                     msg_idx = int(choice) - 1
@@ -98,7 +98,7 @@ class MessageBoard:
                 except ValueError:
                     pass
                     
-    def post_message(self, board_name):
+    def post_message(self, board_name, current_user=None):
         """Post a new message"""
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"{Fore.GREEN}=== POST NEW MESSAGE ==={Style.RESET_ALL}\n")
@@ -121,10 +121,13 @@ class MessageBoard:
             print(f"{Fore.RED}Message cannot be empty!{Style.RESET_ALL}")
             input(f"\n{Fore.YELLOW}Press ENTER to continue...{Style.RESET_ALL}")
             return
+        
+        # Use current user's username or 'Anonymous' if not provided
+        author = current_user['username'] if current_user else 'Anonymous'
             
         message_data = {
             'subject': subject,
-            'author': 'Anonymous',  # Would be current user in real implementation
+            'author': author,
             'date': datetime.now().strftime('%Y-%m-%d %H:%M'),
             'message': '\n'.join(message_lines)
         }

@@ -92,7 +92,7 @@ class BBSEmulator:
             menu_choice = self.menu_system.display_main_menu()
             
             if menu_choice == '1':
-                self.message_board.display_boards()
+                self.message_board.display_boards(self.current_user)
             elif menu_choice == '2':
                 self.file_area.display_files()
             elif menu_choice == '3':
