@@ -19,7 +19,7 @@
 [![Node](https://img.shields.io/badge/Node.js-18%2B-339933.svg?logo=node.js)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/stacycaudle1/Shift-Term/pulls)
 
-[Features](#-features) • [Installation](#️-installation) • [Usage](#-usage) • [Contributing](#-contributing) • [Documentation](#-application-details)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Contributing](#-contributing) • [Documentation](#-application-details)
 
 </div>
 
@@ -31,7 +31,7 @@
 - [Features](#-features)
 - [Quick Start](#-quick-start)
 - [Requirements](#-requirements)
-- [Installation](#️-installation)
+- [Installation](#-installation)
 - [Usage](#-usage)
 - [Architecture](#️-architecture)
 - [Contributing](#-contributing)
@@ -47,7 +47,7 @@
 
 | 🎯 **Purpose-Built** | 🎨 **Authentic Experience** | 🔧 **Modern Stack** |
 |:---:|:---:|:---:|
-| Specifically designed for BBS connections, not just another terminal | Fixed 80x25 display with CP437 encoding for accurate rendering | Built with Electron & xterm.js for cross-platform compatibility |
+| Specifically designed for BBS connections, not just another terminal | Fixed 80×25 display with CP437 encoding for accurate rendering | Built with Electron & xterm.js for cross-platform compatibility |
 
 </div>
 
@@ -64,7 +64,7 @@ This application is available to all coders and programmers, old and new. Whethe
 <td width="50%">
 
 ### 🎨 Authentic BBS Experience
-- Fixed **80x25** terminal display
+- Fixed **80×25** terminal display
 - Proper **CP437** character encoding
 - Full **ANSI graphics** support
 - Classic BBS artwork rendering
@@ -258,7 +258,7 @@ That's it! The application will start, and you can begin connecting to BBS syste
 
 | Feature | Description |
 |---------|-------------|
-| **80x25 Display** | Authentic BBS terminal dimensions |
+| **80×25 Display** | Authentic BBS terminal dimensions |
 | **CP437 Encoding** | Proper character set for vintage content |
 | **ANSI Colors** | Full color palette and formatting |
 | **Scrollback** | Navigate through session history |
