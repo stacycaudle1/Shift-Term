@@ -1,32 +1,180 @@
-# Shift-Term
+<div align="center">
 
-A modern BBS (Bulletin Board System) Terminal Emulator built with Electron and xterm.js, designed to bridge the gap between vintage computing and contemporary development practices.
+```
+███████╗██╗  ██╗██╗███████╗████████╗      ████████╗███████╗██████╗ ███╗   ███╗
+██╔════╝██║  ██║██║██╔════╝╚══██╔══╝      ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
+███████╗███████║██║█████╗     ██║   █████╗   ██║   █████╗  ██████╔╝██╔████╔██║
+╚════██║██╔══██║██║██╔══╝     ██║   ╚════╝   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
+███████║██║  ██║██║██║        ██║            ██║   ███████╗██║  ██║██║ ╚═╝ ██║
+╚══════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝            ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+```
 
-## 🤝 Let's Build Together!
+### 🚀 A Modern BBS Terminal Emulator
+
+**Bridge the gap between vintage computing and contemporary development**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/stacycaudle1/Shift-Term)
+[![Electron](https://img.shields.io/badge/Electron-39.x-47848F.svg?logo=electron)](https://www.electronjs.org/)
+[![Node](https://img.shields.io/badge/Node.js-18%2B-339933.svg?logo=node.js)](https://nodejs.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/stacycaudle1/Shift-Term/pulls)
+
+[Features](#-features) • [Installation](#️-installation) • [Usage](#-usage) • [Contributing](#-contributing) • [Documentation](#-application-details)
+
+</div>
+
+---
+
+## 📖 Table of Contents
+
+- [Why Shift-Term?](#-why-shift-term)
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Requirements](#-requirements)
+- [Installation](#️-installation)
+- [Usage](#-usage)
+- [Architecture](#️-architecture)
+- [Contributing](#-contributing)
+- [Development](#-development-scripts)
+- [Roadmap](#-roadmap)
+- [Application Details](#-application-details)
+
+---
+
+## 💡 Why Shift-Term?
+
+<div align="center">
+
+| 🎯 **Purpose-Built** | 🎨 **Authentic Experience** | 🔧 **Modern Stack** |
+|:---:|:---:|:---:|
+| Specifically designed for BBS connections, not just another terminal | Fixed 80x25 display with CP437 encoding for accurate rendering | Built with Electron & xterm.js for cross-platform compatibility |
+
+</div>
+
+**Shift-Term** brings the nostalgia of Bulletin Board Systems into the modern era. Whether you're a seasoned SysOp, a retrocomputing enthusiast, or a curious newcomer interested in digital archaeology, this terminal emulator is your gateway to hundreds of active BBS systems still running worldwide.
+
+### 🤝 Let's Build Together!
 
 This application is available to all coders and programmers, old and new. Whether you're a seasoned developer familiar with vintage computing or a newcomer interested in learning about BBS culture and terminal emulation, your contributions are welcome. Join us in preserving digital heritage while building modern tools!
 
 ## 🚀 Features
 
-- **Authentic BBS Experience**: Fixed 80x25 terminal display with proper CP437 character encoding
-- **ANSI Graphics Support**: Full color and character rendering for classic BBS artwork
-- **Phonebook Management**: Save, edit, and organize your favorite BBS systems
-- **Modern Interface**: Clean, dark-themed UI with modal dialogs and responsive design
-- **Telnet Protocol**: Native telnet client with proper negotiation (NAWS, TTYPE)
-- **Session Management**: Connection status tracking and optional session logging
+<table>
+<tr>
+<td width="50%">
+
+### 🎨 Authentic BBS Experience
+- Fixed **80x25** terminal display
+- Proper **CP437** character encoding
+- Full **ANSI graphics** support
+- Classic BBS artwork rendering
+
+</td>
+<td width="50%">
+
+### 🔌 Modern Connectivity
+- Native **telnet** protocol
+- Proper negotiation (NAWS, TTYPE)
+- Connection status tracking
+- Optional session logging
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📇 Phonebook Management
+- Save & organize BBS systems
+- Edit entries with ease
+- Quick connect via double-click
+- Notes for each BBS
+
+</td>
+<td width="50%">
+
+### 🎯 User Interface
+- Clean, **dark-themed** design
+- Modal dialogs for management
+- Responsive layout
+- Intuitive controls
+
+</td>
+</tr>
+</table>
+
+---
+
+## ⚡ Quick Start
+
+Get up and running in under 60 seconds:
+
+```bash
+# Clone the repository
+git clone https://github.com/stacycaudle1/Shift-Term.git
+
+# Navigate to the directory
+cd Shift-Term
+
+# Install dependencies
+npm install
+
+# Launch the application
+npm start
+```
+
+That's it! The application will start, and you can begin connecting to BBS systems immediately.
 
 ## 📋 Requirements
 
-- **Node.js** 18+ (LTS recommended)
-- **Cross-Platform Support:**
-  - **Windows** 10/11 (primary development platform)
-  - **macOS** 10.14+ (compatible, limited testing)
-  - **Linux** Ubuntu 18.04+ (compatible, most distributions supported)
-- **npm** or **yarn** package manager
+<div align="center">
+
+| Component | Version | Notes |
+|:---------:|:-------:|:------|
+| **Node.js** | 18+ (LTS) | [Download](https://nodejs.org/) |
+| **npm/yarn** | Latest | Package manager |
+| **OS** | Win 10+, macOS 10.14+, Linux | Cross-platform support |
+
+</div>
+
+### Platform-Specific Details
+
+<details>
+<summary><b>🪟 Windows 10/11</b> (Primary development platform)</summary>
+
+- Use **PowerShell**, **Command Prompt**, or **Git Bash**
+- Install Git from [git-scm.com](https://git-scm.com/)
+- Install Node.js from [nodejs.org](https://nodejs.org/) or via:
+  ```powershell
+  winget install OpenJS.NodeJS
+  ```
+</details>
+
+<details>
+<summary><b>🍎 macOS 10.14+</b> (Compatible, limited testing)</summary>
+
+- Use **Terminal**
+- Install Node.js via [nodejs.org](https://nodejs.org/) or **Homebrew**:
+  ```bash
+  brew install node
+  ```
+</details>
+
+<details>
+<summary><b>🐧 Linux</b> (Ubuntu 18.04+, most distributions supported)</summary>
+
+- Use your distribution's terminal
+- Install via package manager (Ubuntu/Debian):
+  ```bash
+  sudo apt install nodejs npm
+  ```
+</details>
 
 ## 🛠️ Installation
 
 ### All Platforms
+
+<details open>
+<summary><b>Standard Installation</b></summary>
 
 1. **Clone the repository:**
    ```bash
@@ -43,157 +191,477 @@ This application is available to all coders and programmers, old and new. Whethe
    ```bash
    npm start
    ```
+</details>
 
-### Windows Users
+### Platform-Specific Notes
+
+**Windows Users**
 - Use **PowerShell**, **Command Prompt**, or **Git Bash**
 - If you don't have Git, download from [git-scm.com](https://git-scm.com/)
 - Node.js can be installed from [nodejs.org](https://nodejs.org/) or via `winget install OpenJS.NodeJS`
 
-### macOS Users
+**macOS Users**
 - Use **Terminal**
 - Install Node.js via [nodejs.org](https://nodejs.org/) or **Homebrew**: `brew install node`
 
-### Linux Users  
+**Linux Users**  
 - Use your distribution's terminal
 - Install Node.js via package manager: `sudo apt install nodejs npm` (Ubuntu/Debian)
 
 ## 💻 Usage
 
-### Quick Connect
-1. Enter a BBS host address and port in the sidebar
-2. Click **Connect** to establish a session
-3. Use **Disconnect** to close the connection
+### 🔌 Quick Connect
 
-### Phonebook Management
-- **Add Entry**: Click **Add** to create a new BBS entry with name, host, port, and notes
-- **Edit Entry**: Select a BBS from the list, then click **Edit** to modify details
-- **Delete Entry**: Select a BBS and click **Delete** to remove it
-- **Quick Connect**: Double-click any phonebook entry to connect instantly
+<table>
+<tr>
+<td width="50%">
 
-### Terminal Features
-- **80x25 Display**: Authentic BBS terminal dimensions
-- **CP437 Encoding**: Proper character set support for vintage content
-- **ANSI Colors**: Full color palette and formatting support
-- **Scrollback**: Navigate through session history
+**Basic Connection**
+1. Enter BBS host address
+2. Enter port number
+3. Click **Connect**
+4. Use **Disconnect** to close
+
+</td>
+<td width="50%">
+
+**Pro Tips**
+- Save frequently used BBS in phonebook
+- Double-click entries for instant connect
+- Use the scrollback feature to review history
+- Session logging available in settings
+
+</td>
+</tr>
+</table>
+
+### 📇 Phonebook Management
+
+```
+┌─────────────────────────────────────────┐
+│  Action          │  How To              │
+├─────────────────────────────────────────┤
+│  Add Entry       │  Click "Add" button  │
+│  Edit Entry      │  Select & click Edit │
+│  Delete Entry    │  Select & click Del  │
+│  Quick Connect   │  Double-click entry  │
+└─────────────────────────────────────────┘
+```
+
+**Entry Fields:**
+- 📝 **Name**: Friendly identifier for the BBS
+- 🌐 **Host**: Domain or IP address
+- 🔢 **Port**: Connection port (usually 23 or custom)
+- 📄 **Notes**: Personal notes and reminders
+
+### 🖥️ Terminal Features
+
+| Feature | Description |
+|---------|-------------|
+| **80x25 Display** | Authentic BBS terminal dimensions |
+| **CP437 Encoding** | Proper character set for vintage content |
+| **ANSI Colors** | Full color palette and formatting |
+| **Scrollback** | Navigate through session history |
+| **Auto-wrap** | Automatic text wrapping |
 
 ## 🏗️ Architecture
 
-### Tech Stack
-- **Electron** 39.x - Desktop application framework
-- **xterm.js** 6.x - Terminal emulation
-- **Node.js** - Backend telnet client
-- **Vanilla JavaScript** - Frontend without frameworks
-- **CSS Grid/Flexbox** - Modern responsive layout
+<div align="center">
 
-### Project Structure
+### Tech Stack
+
+[![Electron](https://img.shields.io/badge/Electron-39.x-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![xterm.js](https://img.shields.io/badge/xterm.js-6.x-000000?logo=gnome-terminal&logoColor=white)](https://xtermjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+</div>
+
+### 🧩 Components
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Framework** | Electron 39.x | Desktop application framework |
+| **Terminal** | xterm.js 6.x | Terminal emulation engine |
+| **Backend** | Node.js | Telnet client & IPC handling |
+| **Frontend** | Vanilla JavaScript | UI without framework overhead |
+| **Styling** | CSS Grid/Flexbox | Modern responsive layout |
+
+### 📁 Project Structure
+
 ```
 Shift-Term/
-├── src/
-│   ├── main/           # Electron main process
-│   │   └── main.js     # App lifecycle, telnet client, IPC handlers
-│   ├── renderer/       # Frontend interface
-│   │   ├── index.html  # Main UI layout
-│   │   ├── app.js      # Terminal init, phonebook, event handlers
-│   │   └── styles.css  # UI styling and themes
-│   └── preload.js      # Secure IPC bridge
-├── data/
-│   └── phonebook.json  # BBS entries storage
-└── package.json        # Dependencies and scripts
+├── 📂 src/
+│   ├── 📂 main/              # Electron main process
+│   │   └── 📄 main.js        # App lifecycle, telnet client, IPC handlers
+│   ├── 📂 renderer/          # Frontend interface
+│   │   ├── 📄 index.html     # Main UI layout
+│   │   ├── 📄 app.js         # Terminal init, phonebook, event handlers
+│   │   └── 📄 styles.css     # UI styling and themes
+│   └── 📄 preload.js         # Secure IPC bridge (context isolation)
+├── 📂 data/
+│   └── 📄 phonebook.json     # BBS entries storage (local)
+├── 📂 assets/                # Application resources
+└── 📄 package.json           # Dependencies and scripts
+```
+
+### 🔄 Data Flow
+
+```
+┌─────────────┐      IPC       ┌──────────────┐     Telnet     ┌─────────┐
+│  Renderer   │ ◄──────────────► │ Main Process │ ◄─────────────► │   BBS   │
+│  (UI)       │   (Secure)     │  (Backend)   │  (Network)    │ Server  │
+└─────────────┘                └──────────────┘                └─────────┘
+      │                               │
+      ▼                               ▼
+  xterm.js                       Telnet Client
+  Terminal                       (net module)
 ```
 
 ## 🤝 Contributing
 
-This project welcomes contributions from developers of all experience levels! Whether you're a seasoned programmer familiar with vintage computing or a newcomer interested in learning about BBS culture, there's a place for your contributions.
+<div align="center">
 
-### Areas for Contribution
-- **Protocol Support**: SSH, Rlogin, raw TCP connections
-- **File Transfers**: ZMODEM, XMODEM, YMODEM protocols
-- **UI Enhancements**: Themes, font options, layout improvements
-- **Documentation**: Tutorials, API docs, usage guides
-- **Testing**: Cross-platform testing, BBS compatibility
-- **Features**: Macro support, scripting, automation tools
+**This project welcomes contributions from developers of all experience levels!**
 
-### Getting Started
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Test thoroughly
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
+Whether you're a seasoned programmer familiar with vintage computing or a newcomer interested in learning about BBS culture, there's a place for your contributions.
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/stacycaudle1/Shift-Term/pulls)
+[![Contributors](https://img.shields.io/github/contributors/stacycaudle1/Shift-Term?style=for-the-badge)](https://github.com/stacycaudle1/Shift-Term/graphs/contributors)
+
+</div>
+
+### 🎯 Areas for Contribution
+
+<table>
+<tr>
+<td width="33%">
+
+**🔌 Protocols**
+- SSH support
+- Rlogin
+- Raw TCP
+- Serial connections
+
+</td>
+<td width="33%">
+
+**📡 File Transfers**
+- ZMODEM
+- XMODEM
+- YMODEM
+- Kermit
+
+</td>
+<td width="33%">
+
+**🎨 UI/UX**
+- Custom themes
+- Font selection
+- Layout options
+- Accessibility
+
+</td>
+</tr>
+<tr>
+<td width="33%">
+
+**📚 Documentation**
+- Tutorials
+- API docs
+- Usage guides
+- Video demos
+
+</td>
+<td width="33%">
+
+**🧪 Testing**
+- Unit tests
+- Cross-platform
+- BBS compatibility
+- Performance
+
+</td>
+<td width="33%">
+
+**✨ Features**
+- Macro support
+- Scripting
+- Automation
+- Multi-tab
+
+</td>
+</tr>
+</table>
+
+### 🚀 Getting Started
+
+```bash
+# 1. Fork the repository on GitHub
+
+# 2. Clone your fork
+git clone https://github.com/YOUR-USERNAME/Shift-Term.git
+
+# 3. Create a feature branch
+git checkout -b feature/amazing-feature
+
+# 4. Make your changes and test thoroughly
+
+# 5. Commit your changes
+git commit -m 'Add amazing feature'
+
+# 6. Push to your fork
+git push origin feature/amazing-feature
+
+# 7. Open a Pull Request
+```
+
+### 📝 Contribution Guidelines
+
+- ✅ **Test thoroughly** across platforms when possible
+- ✅ **Follow existing** code style and conventions
+- ✅ **Document** new features in README
+- ✅ **Keep changes** focused and atomic
+- ✅ **Write clear** commit messages
 
 ## 📝 Development Scripts
 
+<table>
+<tr>
+<td width="50%">
+
+### 🏃 Running
+
 ```bash
-npm start          # Launch the application
-npm run dev        # Development mode with hot reload
-npm run build      # Build for production
-npm run dist       # Package for distribution
+# Launch application
+npm start
+
+# Development mode with hot reload
+npm run dev
 ```
 
+</td>
+<td width="50%">
+
+### 📦 Building
+
+```bash
+# Build for production
+npm run build
+
+# Package for distribution
+npm run dist
+```
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 🐛 Known Issues
+
+<details>
+<summary>Click to view current limitations</summary>
 
 - Some extended Unicode characters may not render correctly
 - Large file transfers not yet implemented
 - SSH connections require future implementation
+- Multi-tab support is planned but not yet available
+
+**Note:** These are known limitations and are on the roadmap for future releases.
+
+</details>
 
 ## 🎯 Roadmap
 
+<div align="center">
+
+### 🔮 Future Enhancements
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+### 🚀 Phase 1: Core Features
 - [ ] **ZMODEM/XMODEM** file transfer protocols
-- [ ] **SSH** connection support
+- [ ] **SSH** connection support  
 - [ ] **Macro system** for automated commands
-- [ ] **Multi-tab** session management
 - [ ] **Font selection** and sizing options
-- [ ] **Cross-platform** support (macOS, Linux)
+
+</td>
+<td width="50%">
+
+### 🌟 Phase 2: Advanced Features
+- [ ] **Multi-tab** session management
+- [ ] **Cross-platform** testing & optimization
 - [ ] **Plugin architecture** for extensibility
+- [ ] **Scripting engine** for automation
 
-## 📜 License
+</td>
+</tr>
+</table>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
 
-## 🙏 Acknowledgments
+### 💭 Have an idea? [Open an issue](https://github.com/stacycaudle1/Shift-Term/issues) or contribute!
 
-- The **xterm.js** team for excellent terminal emulation
-- **Electron** community for desktop app framework
-- **SysOps** maintaining active BBS systems worldwide
-- **Vintage computing** enthusiasts preserving digital heritage
+</div>
 
 ---
 
+## 📜 License
+
+<div align="center">
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+<table>
+<tr>
+<td align="center" width="25%">
+<h3>🖥️</h3>
+<b>xterm.js Team</b><br>
+Excellent terminal emulation
+</td>
+<td align="center" width="25%">
+<h3>⚡</h3>
+<b>Electron Community</b><br>
+Desktop app framework
+</td>
+<td align="center" width="25%">
+<h3>📡</h3>
+<b>SysOps Worldwide</b><br>
+Maintaining active BBS systems
+</td>
+<td align="center" width="25%">
+<h3>🎮</h3>
+<b>Retrocomputing Enthusiasts</b><br>
+Preserving digital heritage
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+### ⭐ If you find this project useful, please consider giving it a star!
+
+[![GitHub stars](https://img.shields.io/github/stars/stacycaudle1/Shift-Term?style=social)](https://github.com/stacycaudle1/Shift-Term/stargazers)
+
+</div>
+
+---
+
+<div align="center">
+
 ## 📋 Application Details
 
-### What Shift-Term Does
+</div>
 
-**Shift-Term** is a specialized terminal emulator designed specifically for connecting to **Bulletin Board Systems (BBSes)** - the online communities that flourished in the 1980s and 1990s before the widespread adoption of the World Wide Web. While many BBSes have disappeared, hundreds still operate today, maintained by enthusiasts and offering a nostalgic glimpse into early online culture.
+### 🎯 What Shift-Term Does
 
-### Core Functionality
+**Shift-Term** is a specialized terminal emulator designed specifically for connecting to **Bulletin Board Systems (BBSes)** - the online communities that flourished in the 1980s and 1990s before the widespread adoption of the World Wide Web. 
 
-**Terminal Emulation**: Provides an authentic 80-column by 25-row terminal interface that matches the specifications of classic computer terminals and early PCs. This fixed size is crucial for proper display of BBS menus, artwork, and games.
+<div align="center">
 
-**Character Encoding**: Implements CP437 (Code Page 437) character set support, which includes the box-drawing characters, symbols, and extended ASCII characters commonly used in BBS artwork and interfaces.
+```
+┌────────────────────────────────────────────────────────────┐
+│  1980s-1990s BBS Era  →  Modern Terminal  →  Active BBSes  │
+│     (Historical)          (Shift-Term)        (Today!)      │
+└────────────────────────────────────────────────────────────┘
+```
 
-**ANSI Graphics**: Full support for ANSI escape sequences that control text colors, cursor positioning, and screen formatting. This enables proper display of colorful BBS artwork, animated sequences, and user interfaces.
+</div>
 
-**Connection Management**: Built-in telnet client handles the low-level network protocols required to connect to BBS systems. Supports telnet option negotiation including window size (NAWS) and terminal type (TTYPE) announcements.
+While many BBSes have disappeared, **hundreds still operate today**, maintained by enthusiasts and offering a nostalgic glimpse into early online culture.
 
-### Current Services
+### 🔧 Core Functionality
 
-**Phonebook System**: Maintains a local database of BBS systems with their connection details, including host addresses, port numbers, and user notes. The Shift-Bits BBS (bbs.shift-bits.com:2003) is prominently featured as the primary test system.
+<table>
+<tr>
+<td width="50%">
 
-**Session Management**: Tracks connection status, provides user feedback on connection attempts, and handles graceful disconnection. Optional session logging allows users to save their BBS interactions for later review.
+**🖥️ Terminal Emulation**
 
-**User Interface**: Modern desktop application interface that combines the convenience of contemporary software design with the functionality required for vintage BBS access. The interface is specifically optimized for BBS use rather than general terminal operations.
+Provides an authentic **80×25** terminal interface matching classic computer terminals and early PCs. This fixed size is crucial for proper display of BBS menus, artwork, and games.
 
-### Target Audience
+**🎨 Character Encoding**
 
-- **Retrocomputing Enthusiasts**: Users interested in vintage computing and early online services
-- **BBS Community Members**: Active participants in the surviving BBS community
-- **Technology Historians**: Researchers studying early online communities and digital culture
-- **Developers**: Contributors interested in terminal emulation, network protocols, or Electron development
-- **New Users**: People curious about pre-web online services and digital archaeology
+Implements **CP437** (Code Page 437) character set support, including box-drawing characters, symbols, and extended ASCII commonly used in BBS artwork.
 
-### Technical Approach
+</td>
+<td width="50%">
 
-The application prioritizes **authenticity** over generality - rather than being a general-purpose terminal emulator, Shift-Term is specifically optimized for BBS connections. This includes proper handling of CP437 character encoding, fixed terminal dimensions, and telnet protocol specifics that are crucial for BBS compatibility but may not be necessary for modern shell access.
+**🌈 ANSI Graphics**
 
-The **hybrid approach** combines modern web technologies (Electron, xterm.js) with vintage networking protocols (telnet, CP437) to create a bridge between contemporary development practices and historical computing standards. 
+Full support for ANSI escape sequences controlling text colors, cursor positioning, and screen formatting. Enables proper display of colorful BBS artwork and interfaces.
+
+**🔌 Connection Management**
+
+Built-in telnet client handling low-level network protocols. Supports telnet option negotiation including window size (NAWS) and terminal type (TTYPE).
+
+</td>
+</tr>
+</table>
+
+### 🎪 Current Services
+
+<details open>
+<summary><b>📇 Phonebook System</b></summary>
+
+Maintains a local database of BBS systems with connection details, including host addresses, port numbers, and user notes. The **Shift-Bits BBS** (bbs.shift-bits.com:2003) is prominently featured as the primary test system.
+
+</details>
+
+<details open>
+<summary><b>📊 Session Management</b></summary>
+
+Tracks connection status, provides user feedback on connection attempts, and handles graceful disconnection. Optional session logging allows users to save their BBS interactions for later review.
+
+</details>
+
+<details open>
+<summary><b>🎨 User Interface</b></summary>
+
+Modern desktop application interface combining contemporary software design convenience with functionality required for vintage BBS access. The interface is specifically optimized for BBS use rather than general terminal operations.
+
+</details>
+
+### 👥 Target Audience
+
+<div align="center">
+
+| 🎮 Retrocomputing | 📡 BBS Community | 📚 Historians | 💻 Developers | 🌟 New Users |
+|:-----------------:|:----------------:|:-------------:|:-------------:|:------------:|
+| Vintage computing enthusiasts | Active BBS participants | Technology researchers | Terminal emulation contributors | Curious newcomers |
+
+</div>
+
+### 🎓 Technical Approach
+
+The application prioritizes **authenticity over generality** - rather than being a general-purpose terminal emulator, Shift-Term is specifically optimized for BBS connections. This includes proper handling of CP437 character encoding, fixed terminal dimensions, and telnet protocol specifics that are crucial for BBS compatibility.
+
+The **hybrid approach** combines modern web technologies (Electron, xterm.js) with vintage networking protocols (telnet, CP437) to create a bridge between contemporary development practices and historical computing standards.
+
+---
+
+<div align="center">
+
+### 💖 Made with passion for preserving digital heritage
+
+**[⬆ Back to Top](#shift-term)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-stacycaudle1%2FShift--Term-blue?logo=github)](https://github.com/stacycaudle1/Shift-Term)
+[![Issues](https://img.shields.io/github/issues/stacycaudle1/Shift-Term)](https://github.com/stacycaudle1/Shift-Term/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/stacycaudle1/Shift-Term)](https://github.com/stacycaudle1/Shift-Term/pulls)
+
+</div> 
