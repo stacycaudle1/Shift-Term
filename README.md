@@ -1,5 +1,11 @@
 <div align="center">
-
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)](#)
+[![Status](https://img.shields.io/badge/status-active%20development-brightgreen)](#)
+[![Discussions](https://img.shields.io/github/discussions/stacycaudle1/Shift-Term)](https://github.com/stacycaudle1/Shift-Term/discussions)
+[![Issues](https://img.shields.io/github/issues/stacycaudle1/Shift-Term)](https://github.com/stacycaudle1/Shift-Term/issues)
+[![Stars](https://img.shields.io/github/stars/stacycaudle1/Shift-Term?style=social)](https://github.com/stacycaudle1/Shift-Term/stargazers)
+  
 ```
 ███████╗██╗  ██╗██╗███████╗████████╗      ████████╗███████╗██████╗ ███╗   ███╗
 ██╔════╝██║  ██║██║██╔════╝╚══██╔══╝      ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
