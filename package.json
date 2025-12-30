@@ -1,28 +1,73 @@
 {
   "name": "shift-term",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Shift-Term: A modern BBS terminal emulator with a unique look.",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A modern BBS terminal emulator designed to bridge vintage computing with contemporary development practices.",
+  "author": "Shift-Term Contributors",
+  "homepage": "https://github.com/stacycaudle1/Shift-Term",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stacycaudle1/Shift-Term.git"
+  },
   "main": "src/main/main.js",
   "scripts": {
     "dev": "electron .",
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder --win",
+    "dist:win": "electron-builder --win",
+    "build:win": "electron-builder --win --x64",
+    "build:installer": "electron-builder --win nsis",
+    "build:portable": "electron-builder --win portable",
+    "release": "electron-builder --publish=never"
   },
   "build": {
-    "appId": "com.shift.term",
+    "appId": "com.shiftterm.app",
     "productName": "Shift-Term",
+    "copyright": "Copyright © 2025 Shift-Term Contributors",
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "assets",
+      "output": "release"
     },
     "files": [
       "src/**/*",
-      "data/**/*"
+      "data/**/*",
+      "assets/**/*",
+      "!src/**/*.map",
+      "!**/*.{o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "data"
+      }
     ],
     "win": {
-      "target": "nsis",
-      "artifactName": "ShiftTerm-${version}-Setup.exe"
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable", 
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "ShiftTerm-${version}-Setup.${ext}",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "displayLanguageSelector": false,
+      "menuCategory": "Terminal Emulators"
+    },
+    "portable": {
+      "artifactName": "ShiftTerm-${version}-Portable.${ext}"
     }
   },
   "dependencies": {
