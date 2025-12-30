@@ -458,6 +458,44 @@ npm run dist
 </table>
 
 ---
+npm start          # Launch the application in development
+npm run dev        # Same as start
+npm run pack       # Package without installer (faster)
+npm run dist       # Build Windows installer and portable
+npm run build:installer # Build NSIS installer only
+npm run build:portable  # Build portable exe only
+```
+
+## 📦 Building for Windows
+
+### Development Testing:
+```bash
+npm run pack
+# Creates: release/win-unpacked/Shift-Term.exe
+```
+
+### Distribution Packages:
+```bash
+npm run dist
+# Creates:
+# - ShiftTerm-1.0.0-Setup.exe (NSIS installer)
+# - ShiftTerm-1.0.0-Portable.exe (portable version)
+```
+
+### Installation Options:
+- **NSIS Installer**: Full installation with Start Menu shortcuts, Desktop icon
+- **Portable**: Single executable, runs without installation
+- **Unpacked**: Development version in `release/win-unpacked/`
+
+### System Requirements:
+- **Windows 10+** (64-bit)
+- **~300MB** disk space
+- **No additional dependencies** (all bundled)
+
+### Notes:
+- First build may take several minutes (downloads Electron binaries)
+- Subsequent builds are much faster
+- If you get permission errors, run PowerShell as Administrator
 
 ## 🐛 Known Issues
 
