@@ -39,6 +39,16 @@ This application is available to all coders and programmers, old and new. Whethe
   - **Linux** Ubuntu 18.04+ (compatible, most distributions supported)
 - **npm** or **yarn** package manager
 
+## Project Status
+
+Shift-Term is under active development.
+Contributions are welcome — especially around:
+- Terminal protocols
+- ANSI rendering
+- UI/UX improvements
+- Packaging and installers
+
+
 ## 🛠️ Installation
 
 ### All Platforms
@@ -160,6 +170,14 @@ This project welcomes contributions from developers of all experience levels! Wh
 7. Open a Pull Request
 
 ## 📝 Development Scripts
+
+## Quick Start (Development)
+
+```bash
+git clone https://github.com/YOURNAME/Shift-Term.git
+cd Shift-Term
+npm install
+npm run dev
 
 ```bash
 npm start          # Launch the application in development
