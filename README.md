@@ -1,6 +1,21 @@
-# Shift-Term
+<div align="center">
+
+```
+███████╗██╗  ██╗██╗███████╗████████╗      ████████╗███████╗██████╗ ███╗   ███╗
+██╔════╝██║  ██║██║██╔════╝╚══██╔══╝      ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
+███████╗███████║██║█████╗     ██║   █████╗   ██║   █████╗  ██████╔╝██╔████╔██║
+╚════██║██╔══██║██║██╔══╝     ██║   ╚════╝   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
+███████║██║  ██║██║██║        ██║            ██║   ███████╗██║  ██║██║ ╚═╝ ██║
+╚══════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝            ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+```
+
+### 🚀 A Modern BBS Terminal Emulator
 
 A modern BBS (Bulletin Board System) Terminal Emulator built with Electron and xterm.js, designed to bridge the gap between vintage computing and contemporary development practices.
+
+</div>
+
+---
 
 ## 🤝 Let's Build Together!
 
@@ -76,11 +91,29 @@ This application is available to all coders and programmers, old and new. Whethe
 - **ANSI Colors**: Full color palette and formatting support
 - **Scrollback**: Navigate through session history
 
+### Configuration Files
+
+The application uses JSON files in the `data/` directory:
+
+- **phonebook.json**: Stores saved BBS entries with connection details
+- **settings.json**: Application configuration (terminal dimensions, theme, logging preferences)
+
+Default settings:
+```json
+{
+  "defaultCols": 80,
+  "defaultRows": 25,
+  "logging": false,
+  "theme": "neon-dark"
+}
+```
+
 ## 🏗️ Architecture
 
 ### Tech Stack
-- **Electron** 39.x - Desktop application framework
-- **xterm.js** 6.x - Terminal emulation
+- **Electron** 39.2.7+ - Desktop application framework
+- **xterm.js** 6.0.0+ - Terminal emulation
+- **@xterm/addon-fit** 0.11.0+ - Terminal sizing addon
 - **Node.js** - Backend telnet client
 - **Vanilla JavaScript** - Frontend without frameworks
 - **CSS Grid/Flexbox** - Modern responsive layout
@@ -97,7 +130,11 @@ Shift-Term/
 │   │   └── styles.css  # UI styling and themes
 │   └── preload.js      # Secure IPC bridge
 ├── data/
-│   └── phonebook.json  # BBS entries storage
+│   ├── phonebook.json  # BBS entries storage
+│   └── settings.json   # Application settings (terminal size, theme, logging)
+├── assets/
+│   ├── fonts/          # Terminal fonts
+│   └── README.md       # Icon requirements for building
 └── package.json        # Dependencies and scripts
 ```
 
@@ -182,7 +219,7 @@ npm run dist
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available for contribution. Please check with the repository owner for specific licensing terms.
 
 ## 🙏 Acknowledgments
 
