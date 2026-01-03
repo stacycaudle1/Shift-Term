@@ -1,26 +1,6712 @@
 [
   {
+    "name": "Shift Bits BBS",
+    "host": "bbs.shift-bits.com",
+    "port": 2003,
+    "protocol": "telnet"
+  },
+  {
+    "name": "Renegade BBS",
+    "host": "ttb.rgbbs.info",
+    "port": 23,
+    "protocol": "telnet"
+  },
+  {
     "name": "Vert",
     "host": "vert.synchro.net",
     "port": 23,
     "protocol": "telnet"
   },
   {
-    "name": "The Forgotten Realm",
-    "host": "tfr.synchro.net",
-    "port": 23,
-    "protocol": "telnet"
+    "name": "0Day BBS",
+    "host": "65.108.245.243",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
   },
   {
-    "name": "Hobby BBS",
-    "host": "bbs.foobar.net",
-    "port": 23,
-    "protocol": "telnet"
+    "name": "0xDECAFBAD BBS",
+    "host": "bbs.decafbad.com",
+    "port": 6523,
+    "protocol": "telnet",
+    "notes": ""
   },
   {
-    "name": "Shift Bits BBS",
-    "host": "bbs.shift-bits.com",
+    "name": "13th Floor BBS",
+    "host": "13th.hoyvision.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "13th Leader BBS",
+    "host": "13leader.net",
+    "port": 8023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "1992 BBS",
+    "host": "98.113.13.134",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "20 For Beers BBS",
+    "host": "20forbeers.com",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "300 F-ing Baud BBS",
+    "host": "300baud.dynu.net",
+    "port": 2525,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "32-Bit BBS",
+    "host": "x-bit.org",
+    "port": 23230,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "3D Realms",
+    "host": "172.0.79.226",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "4 Wheel Ham BBS",
+    "host": "bbs.4wheelham.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "4D2 Dot Org",
+    "host": "bbs.4d2.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "64 Vintage BBS",
+    "host": "64vintageremixbbs.dyndns.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "8-Bit Archive",
+    "host": "bbs.8-bitarchive.com",
+    "port": 2223,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "8-Bit Boyz BBS",
+    "host": "bbs.8bitboyz.com",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "8-Bit Playground",
+    "host": "8bit.hoyvision.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "8Bit Club BBS",
+    "host": "bbs.8bitclub.com",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (Game Server)",
+    "host": "game.a-net-online.lol",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (Linux Synchronet)",
+    "host": "x.a-net.online",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (Mystic)",
+    "host": "mystic-anet.online",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (Spitfire)",
+    "host": "sf.a-net.online",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (Synchronet)",
+    "host": "a-net.online",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A-Net Online (TWGS)",
+    "host": "game.a-net-online.lol",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "A1 BBS",
+    "host": "a1bbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Absinthe BBS",
+    "host": "absinthebbs.net",
+    "port": 1940,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Abyss BBS",
+    "host": "bbs.abyssnode.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ace of Spades BBS",
+    "host": "chaotix.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Acid Underworld",
+    "host": "blackflag.acid.org",
+    "port": 31337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ACS BBS",
+    "host": "18.205.154.92",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Adept BBS TWGS",
+    "host": "adeptbbs.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Adept Online Entertainment",
+    "host": "adeptbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Aerodrome",
+    "host": "theaerodromebbs.com",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Afterglow BBS",
+    "host": "23.119.22.58",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Agency BBS",
+    "host": "agency.bbs.nz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Agon BBS",
+    "host": "krion.io",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Agster",
+    "host": "bbs.aghy.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Aincrad BBS",
+    "host": "67.205.168.255",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Air & Wave BBS",
+    "host": "bbs.airandwave.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Al's Geek Lab BBS",
+    "host": "bbs.alsgeeklab.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alamo BBS",
+    "host": "alamobbs.mywire.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "AlcaBBS",
+    "host": "bbs.alcatrash.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alcatraz Prison BBS",
+    "host": "alcatrazbbs.ddns.net",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alcoholiday BBS (Mystic)",
+    "host": "alcoholidaybbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alcoholiday BBS (Renegade)",
+    "host": "alcoholidaybbs.com",
+    "port": 95,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ale's BBS",
+    "host": "manalejandro.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Aleco Experience BBS",
+    "host": "bbs.alecoexp.cz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alien Mindbenders BBS",
+    "host": "195.43.155.90",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Aliens' Alcove!",
+    "host": "aliens.ph",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "All Things IT",
+    "host": "38.107.236.100",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alltsk",
+    "host": "fido.alltsk.ru",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alpha Centauri BBS",
+    "host": "acentauribbs.no-ip.org",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alphachron BBS",
+    "host": "193.22.2.193",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "AlphaNet",
+    "host": "2.236.17.38",
+    "port": 2888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Altair IV BBS",
+    "host": "altairiv.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Altair Mini BBS",
+    "host": "altairminibbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Altar of Wares",
+    "host": "altarofwaresbbs.hopto.org",
+    "port": 6464,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Alterant BBS",
+    "host": "115.70.188.112",
+    "port": 123,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "American Connection BBS",
+    "host": "tacbbs.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Amiga CBM BBS",
+    "host": "amiganer.amms-bbs.de",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Amiga City",
+    "host": "amigacity.xyz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Amiga Retro Brisbane BBS",
+    "host": "www.amigaretro.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Amiga Underground (AmiExpress)",
+    "host": "amigaunderground.com",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Amis XE",
+    "host": "amis86.ddns.net",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "AMSTRAD BBS",
+    "host": "amstrad.simulant.uk",
+    "port": 464,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Analog Waffle",
+    "host": "waffle.c4bmore.com",
+    "port": 2001,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Androids Dungeon",
+    "host": "bbs.androidsdungeon.co.uk",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Anduin BBS",
+    "host": "bbs.anduin.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Animation Game Station (Animeyo)",
+    "host": "54.238.90.108",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Another Droid BBS",
+    "host": "andr01d.zapto.org",
+    "port": 9999,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Another F-ing BBS",
+    "host": "anotherbbs.dynu.net",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ANSITex",
+    "host": "115.70.188.112",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Antelope Love BBS",
+    "host": "bbs.antelopelovefan.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Anti Earth Union Government (Chinese)",
+    "host": "aeug.asuscomm.com",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Antidote",
+    "host": "antidote.triad.se",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Antikitera",
+    "host": "technotron.asuscomm.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Anybox BBS",
+    "host": "anybox.freedyndns.de",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Arcadia BBS (1)",
+    "host": "bbs.arcadiabbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Archaic Binary",
+    "host": "bbs.archaicbinary.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ArcticZone Online Entertainment (1)",
+    "host": "bbs.arcticzonebbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ARDA-BBS.com",
+    "host": "arda-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Area 52",
+    "host": "area52.tk",
+    "port": 5200,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Arena BBS",
+    "host": "netasylum.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ARTNET",
+    "host": "50.116.51.149",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "AT2K Design BBS",
+    "host": "bbs.at2k.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Atavachron BBS",
+    "host": "bbs.atavachronbbs.net",
+    "port": 22,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Athelstan BBS",
+    "host": "athelstan.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Atlantis BBS",
+    "host": "75.8.224.32",
+    "port": 6401,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Atmosphere BBS (NTU)",
+    "host": "bbs.as.ntu.edu.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Attic BBS",
+    "host": "theattic.v1cd3m1z3r.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Avalon Isle BBS",
+    "host": "atl.ddns.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Avast! BBS",
+    "host": "avastbbs.servegame.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Baba Yaga's BBS",
+    "host": "68.98.101.79",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Back In Time",
+    "host": "backintime.ddns.net",
+    "port": 6510,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Back to the Future (SSH)",
+    "host": "bttfbbs.com",
+    "port": 22,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Backwood Realm BBS",
+    "host": "bwrbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bahamut BBS",
+    "host": "bbs.gamer.com.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Barbaria (SSH)",
+    "host": "barbaria.norbus.com",
+    "port": 22,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Basement BBS",
+    "host": "basementbbs.ddns.net",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bass Planet",
+    "host": "thebassplanet.com",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Baudville",
+    "host": "amis86.ddns.net",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bayou BBS",
+    "host": "jayctheriot.com",
+    "port": 6401,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Development",
+    "host": "bbsdev.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Gamer",
+    "host": "bbsgamer.ddns.net",
+    "port": 2600,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Games",
+    "host": "bbsgames.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS GameTime (MajorBBS)",
+    "host": "freespeak.hopto.org",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS GameTime (Menu)",
+    "host": "freespeak.hopto.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS GameTime (PCBoard)",
+    "host": "freespeak.hopto.org",
+    "port": 233,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS GameTime (Synchronet)",
+    "host": "freespeak.hopto.org",
+    "port": 23233,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS OldChat",
+    "host": "bbs.oldchat.ru",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Orreli",
+    "host": "bbs.orreli.net",
+    "port": 45023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Retrocampus",
+    "host": "bbs.retrocampus.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS Tournament Wordle",
+    "host": "bbswordle.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS.JasonWalker.ca",
+    "host": "bbs.jasonwalker.ca",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BBS.Telearena.us",
+    "host": "bbs.telearena.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BCG-Box",
+    "host": "bbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BCR Games Server",
+    "host": "bcrgames.com",
+    "port": 31337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BeeBS II",
+    "host": "beebs.ddns.net",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BEER-ISAC BBS",
+    "host": "31.220.63.185",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Beiyou Forum",
+    "host": "bbs.byr.cn",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Big Rabbit BBS",
+    "host": "bunnybbs.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Big Time BBS",
+    "host": "bigtimebbs.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Big5 BBS",
+    "host": "39.106.161.147",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Biker Bob's Clubhouse",
+    "host": "bbsclubhouse.ddns.net",
+    "port": 1040,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BirdEnuf BBS",
+    "host": "bbs.birdenuf.com",
     "port": 2003,
-    "protocol": "telnet"
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BitPlane BBS",
+    "host": "wa7npx.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bitpunk BBS",
+    "host": "bbs.bitpunk.fm",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bits & Bytes BBS",
+    "host": "bbs.bnbbbs.net",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bitwoods RBBS-PC",
+    "host": "bitwoods.duckdns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Black Flag BBS",
+    "host": "blackflag.acid.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Black Tower BBS",
+    "host": "blackflag.acid.org",
+    "port": 26,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BlackICE",
+    "host": "134.3.60.152",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Blacklight Underground",
+    "host": "acentauribbs.no-ip.org",
+    "port": 2424,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Blackstar BBS",
+    "host": "blackstar-bbs.servegame.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Blood Stone",
+    "host": "wwiv.bsbbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BLOODBBS",
+    "host": "blood.bbsn.us",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Blurred Vision",
+    "host": "bbs.novass.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Boar's Head Tavern",
+    "host": "byob.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BodaX BBS",
+    "host": "bbs.beardy.se",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Boebertfeet",
+    "host": "66.228.38.176",
+    "port": 52270,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BoobTube",
+    "host": "bbs.wz5bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Books Chess Server",
+    "host": "books.internetking.us",
+    "port": 5000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bookworm BBS",
+    "host": "bookworm.synchro.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Boot Factory 2K+",
+    "host": "bfbbs.no-ip.com",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Borderline BBS",
+    "host": "borderlinebbs.dyndns.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bottomless Abyss BBS",
+    "host": "bbs.bottomlessabyss.net",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brain Storm BBS (SSH)",
+    "host": "bsbbs.com.br",
+    "port": 22,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BrainToys BBS",
+    "host": "braintoys.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brazi.net",
+    "host": "24.158.121.19",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brett Bender BBS",
+    "host": "207.90.251.241",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brewery BBS",
+    "host": "thebrewery.servebeer.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brian's Blog TWGS",
+    "host": "tw2002.briancmoses.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brigandine",
+    "host": "brigandine.org",
+    "port": 9390,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Brokedown Palace BBS",
+    "host": "palace.brokedownpalace.online",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Broken Bubble",
+    "host": "bbs.thebrokenbubble.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "BUEMA BBS",
+    "host": "bbs.buema.ch",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Bunker 3",
+    "host": "75.242.168.227",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Butterfly BBS",
+    "host": "211.68.71.66",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Byte Me BBS",
+    "host": "chat.hohimer.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ByteBarn BBS",
+    "host": "bbs.bytebarn.de",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "C3BBS",
+    "host": "c3bbs.retronetworking.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "C64 Pub",
+    "host": "bbs.c64.pub",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cabana Bar BBS",
+    "host": "bbs.cabanabar.net",
+    "port": 11123,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cabin BBS, The",
+    "host": "thecabinbbs.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Camelot BBS",
+    "host": "camelotb.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Canerduh BBS",
+    "host": "bbs.canerduh.com",
+    "port": 23905,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Capital Station BBS",
+    "host": "csbbs.dyndns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Capitol City Online BBS",
+    "host": "capitolcityonline.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Capitol Shrill BBS",
+    "host": "capitolshrill.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Captain's Quarters BBS II",
+    "host": "cqbbs.ddns.net",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Castle BBS",
+    "host": "47.46.52.130",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Castle Rock BBS",
+    "host": "cedarvalleybbs.com",
+    "port": 2424,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Catpit BBS",
+    "host": "bbs.cis92.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Catsweat TWGS",
+    "host": "24.88.72.99",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cave BBS",
+    "host": "cavebbs.homeip.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CB2 Micro BBS",
+    "host": "email.qrp.gr",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cbaxyz TWGS",
+    "host": "tdod.org",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CBBS/TN",
+    "host": "cbbs.mitsaltair.com",
+    "port": 8800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CCUW BBS",
+    "host": "rtc.to",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CCX BBS",
+    "host": "bbs.ccxbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CedarValley BBS",
+    "host": "cedarvalleybbs.com",
+    "port": 2525,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CedarValley BBS 2",
+    "host": "cedarvalleybbs.com",
+    "port": 2626,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cement City",
+    "host": "scenewall.bbs.io",
+    "port": 4000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Censorship BBS",
+    "host": "122.199.12.99",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Central Ontario Remote (Mystic)",
+    "host": "centralontarioremote.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Central Ontario Remote (TWGS)",
+    "host": "centralontarioremote.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Centronian BBS",
+    "host": "bbs.centronian.ca",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Centrum BBS",
+    "host": "bbs.ninthchevron.com.au",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chatter BBS",
+    "host": "chat.korokorok.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chimia BBS",
+    "host": "chimia.se",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Choice Core BBS (1st)",
+    "host": "1stchoicecore.co.nz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Choice Core BBS (2nd)",
+    "host": "2ndchoicecore.nz",
+    "port": 1024,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chookfest BBS",
+    "host": "bbs.chookfest.net",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chris BBS",
+    "host": "5.231.180.215",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chris Denney TWGS",
+    "host": "tw2002cd.ddns.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Christian Fellowship",
+    "host": "cfbbs.no-ip.com",
+    "port": 26,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chrome 30 BBS",
+    "host": "3.136.234.155",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Chrysalis Online Services TBBS BBS",
+    "host": "chrysalisbbs.org",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CIRCL's BBS",
+    "host": "bbs.circl.lu",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Citadel 64 BBS",
+    "host": "citadel64.thejlab.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Citrick BBS",
+    "host": "wilco.ydns.eu",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cittadella BBS",
+    "host": "bbs.cittadellabbs.it",
+    "port": 4001,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "City on the Edge of Forever",
+    "host": "interzone.annexia.xyz",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Clacker Works",
+    "host": "cw.qc.to",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Classic BBS",
+    "host": "board.classicbbs.net",
+    "port": 9339,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Classic Computing BBS",
+    "host": "bbs.classiccomputing.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Clover BBS",
+    "host": "51.89.167.62",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Clover Love (Chinese)",
+    "host": "segaa.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Clube da Insonia BBS",
+    "host": "bbs.conf.eti.br",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Clutch",
+    "host": "clutchbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Coal Mine BBS",
+    "host": "84.104.78.157",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CodeRed BBS",
+    "host": "coderedmud.servegame.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "COE BBS",
+    "host": "bbs.eow.lol",
+    "port": 2377,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cold Fusion BBS",
+    "host": "cfbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cold Winter Knights",
+    "host": "bbs.coldwinterknights.net",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Colossus BBS",
+    "host": "bbs.qzwx.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Commander Central",
+    "host": "45.10.160.94",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Commodore Image",
+    "host": "cib.dyndns.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Commodore Image II",
+    "host": "cib.dyndns.org",
+    "port": 6401,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Commodore Image III",
+    "host": "cib.dyndns.org",
+    "port": 6402,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Comms Nuts BBS",
+    "host": "203.38.121.134",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Company Citadel BBS",
+    "host": "www.companycitadel.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "COMPUTE!'s Gazette BBS",
+    "host": "64life.net",
+    "port": 1983,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Computer Express",
+    "host": "cebbs.costakis.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Computer God",
+    "host": "cpugod.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Concrete Roots",
+    "host": "concreteroots.servebbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Constructive Chaos BBS",
+    "host": "conchaos.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Constructive Chaos TWGS",
+    "host": "conchaos.synchro.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Convolution",
+    "host": "convolution.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cool David",
+    "host": "bbs.cooldavid.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cottonwood BBS",
+    "host": "cottonwoodbbs.dyndns.org",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crack In Time BBS",
+    "host": "crackintimebbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CrappieCracker Online BBS",
+    "host": "www.crappiecracker.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crazy Eric's BBS",
+    "host": "bbs.crazyerics.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crazy Paradise",
+    "host": "cpbbs.de",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "CrNet BBS",
+    "host": "www.crnet.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crusty Chicken TWGS",
+    "host": "69.4.62.151",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crypt BBS (2)",
+    "host": "thecrypt.synchronetbbs.org",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crystal Palace",
+    "host": "cptalker.com",
+    "port": 9900,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Crystal Set",
+    "host": "zl4kj.nz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cyber Sword",
+    "host": "bbs.excalibursheath.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cyberia BBS",
+    "host": "sysgod.org",
+    "port": 23000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cyberspace BBS (Synchronet)",
+    "host": "cyberspacebbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cyberspace BBS (Worldgroup)",
+    "host": "cyberspacebbs.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Cyrellia BBS",
+    "host": "bbs.cyrellia.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "D0P3 BBS",
+    "host": "bbs.intersrv.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Danger Bay BBS",
+    "host": "dangerbaybbs.dyndns.org",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dank Domain",
+    "host": "play.ddgame.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dark Endless",
+    "host": "darkendlessbbs.hopto.org",
+    "port": 6510,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dark Game BBS",
+    "host": "darkgame.buanzo.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dark Realms",
+    "host": "bbs.darkrealms.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dark Systems BBS",
+    "host": "bbs.dsbbs.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dark Wastelands",
+    "host": "darkwastelands.com",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DarkForce! BBS, The",
+    "host": "darkforce-bbs.dyndns.org",
+    "port": 1040,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Darklevel",
+    "host": "darklevel.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DarkMatter's TWGS",
+    "host": "twgs.geekm0nkey.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Darkwood BBS",
+    "host": "darkwood.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Datotal",
+    "host": "datotal.net",
+    "port": 35723,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dave's BBS",
+    "host": "143.223.235.160",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dawn of Demise (MajorBBS)",
+    "host": "tdod.org",
+    "port": 3000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dawn of Demise (Worldgroup)",
+    "host": "tdod.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dead Carrier BBS",
+    "host": "the-rotten-core.strangled.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dead Internet Society",
+    "host": "deadinternet.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dead Zone BBS",
+    "host": "dzbbs.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Deadbeatz BBS",
+    "host": "deadbeatz.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Death Row BBS",
+    "host": "deathrow.servebbs.org",
+    "port": 1001,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DeepSkies BBS",
+    "host": "bbs.deepskies.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Defile BBS",
+    "host": "50.110.169.17",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Delta City BBS",
+    "host": "deltacity.se",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Demigoth BBS",
+    "host": "bbs.demigoth.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Demonsnet BBS",
+    "host": "demonsnet.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Desert Rats Sanctuary TWGS",
+    "host": "bbs.kn6q.org",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DHXY",
+    "host": "dhxy.info",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Diamond Mine Online (Synchronet)",
+    "host": "bbs.dmine.net",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Diamond Mine Online (WWIV)",
+    "host": "bbs.dmine.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Didstopia BBS",
+    "host": "94.22.232.77",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digicom BBS",
+    "host": "bbs.digicombbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Dial BBS",
+    "host": "digitaldial.homeunix.com",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Distortion",
+    "host": "bbs.digitaldistortionbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Dreams",
+    "host": "ddreams.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Lethargia BBS",
+    "host": "www.diglet.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Post",
+    "host": "thedigitalpost.freeddns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Rainbow",
+    "host": "bbs.digitalrainbow.info",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Warfare",
+    "host": "bbs.digital-warfare.net",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Digital Zone",
+    "host": "5.150.245.20",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dime BBS",
+    "host": "alcoholidaybbs.com",
+    "port": 94,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Disconnected by Peer BBS",
+    "host": "bbs.disconnected-by-peer.at",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Diskbox ][",
+    "host": "tag.diskbox2.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Diskhoppers Palace BBS",
+    "host": "diskhopp.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Distortion",
+    "host": "d1st.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DJ Dave BBS",
+    "host": "djdave.uk",
+    "port": 8088,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DJ's Place",
+    "host": "bbs.impakt.net",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DLWX BBS",
+    "host": "107.175.69.10",
+    "port": 60023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DniproWave BBS",
+    "host": "bbs.net.ua",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dock Sud",
+    "host": "bbs.docksud.com.ar",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dogtown BBS",
+    "host": "bbs.kiwi.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Door Games Unlimited",
+    "host": "dgu.strangled.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Doozy",
+    "host": "doozy.thruhere.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dove Only",
+    "host": "casper.homeip.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DownUnder BBS",
+    "host": "202.90.240.159",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dream Garden",
+    "host": "cd.csie.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dream Land BBS",
+    "host": "ccns.cc",
+    "port": 3456,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dreamland BBS",
+    "host": "104.174.3.6",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dreamline BBS",
+    "host": "din.asciiattic.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "DUAO BBS",
+    "host": "hermes.okyler.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Duensing Digital",
+    "host": "bbs.duensing.digital",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dundarach BBS",
+    "host": "dundarach.tplinkdns.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dungeon BBS",
+    "host": "59.167.142.49",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dura-Europos",
+    "host": "dura-bbs.net",
+    "port": 6359,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dynamite BBS (2)",
+    "host": "dynamite.synchronetbbs.org",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Dyslexic Donkey",
+    "host": "dydo.erb.pw",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eagle's Dare BBS",
+    "host": "bbsdoors.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eat My Shorts! BBS",
+    "host": "ems-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Echo Base BBS",
+    "host": "96.27.249.221",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Echo Chamber BBS",
+    "host": "echochamber.zapto.org",
+    "port": 3640,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eclipse BBS",
+    "host": "eclipsebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Efectolinux",
+    "host": "bbs.efectolinux.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eldritch Clockwork",
+    "host": "eldritchclockwork.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Electraphysics",
+    "host": "142.11.212.221",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Electronic Chicken BBS",
+    "host": "bbs.electronicchicken.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Elevator BBS",
+    "host": "162.212.158.202",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Emerald Hill BBS",
+    "host": "bbs.emeraldhill.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Emerald Valley",
+    "host": "bbs.emeraldvalley.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Empire of the Dragon BBS",
+    "host": "bbs.eotd.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "EMU486",
+    "host": "bbs.emu486.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Enchanted BBS",
+    "host": "47.38.20.227",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "End Of The Line BBS",
+    "host": "endofthelinebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ENiAC 2.0 BBS",
+    "host": "eniacv2.net",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Enigma BBS",
+    "host": "enigma-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Enigma Echo",
+    "host": "84.152.34.213",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Enlight BBS",
+    "host": "enlight.hopto.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Enterprise BBS",
+    "host": "enterprisebbs.ddns.net",
+    "port": 1701,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Entropy BBS",
+    "host": "121.99.249.4",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ERICADE Network",
+    "host": "the.ericade.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Error 200 Tech BBS",
+    "host": "bbs.error200.tech",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Error 404 (TWGS)",
+    "host": "error404bbs.ddns.net",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Error 404 BBS File Server",
+    "host": "error404bbs.ddns.net",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Error 404 BBS Phone Book",
+    "host": "error404bbs.ddns.net",
+    "port": 419,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Escape To Other Worlds",
+    "host": "etow.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eternal Domain BBS",
+    "host": "bbs.eternaldomain.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ethernet Gateway",
+    "host": "ethernetgateway.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Euphoria BBS",
+    "host": "euphoria.mudinfo.net",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Exoplanet",
+    "host": "exoplanetbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Extreme BBS",
+    "host": "bayvillewireless.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Extricate BBS",
+    "host": "bbs.extricate.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eye of the Beholder",
+    "host": "fido.beholderbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Eye of the Storm",
+    "host": "on.the.net.nz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fading Black",
+    "host": "23.95.146.28",
+    "port": 8282,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Faith Collapsing BBS",
+    "host": "bbs.faithcollapsing.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Faker BBS",
+    "host": "thafaker.crabdance.com",
+    "port": 8088,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Family BBS",
+    "host": "familybbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fatcats BBS",
+    "host": "fatcatsbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "FDD1",
+    "host": "fdd.one",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fennec BBS",
+    "host": "50.116.41.177",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fercho BBS",
+    "host": "ferchobbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "File Bank BBS",
+    "host": "tfb-bbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Files 4 Fun BBS",
+    "host": "bbs.f4fbbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fireball Express (VADV)",
+    "host": "vadv.fireballex.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fireside BBS",
+    "host": "firesidebbs.com",
+    "port": 23231,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "First Division",
+    "host": "158.174.185.101",
+    "port": 1987,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "FlipperZero BBS",
+    "host": "bbs.gglab.cloud",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "FlupH BBS",
+    "host": "fluph.zapto.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fluxpod Information Exchange",
+    "host": "fix.no",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "FMRL",
+    "host": "fmrl.throwbackbbs.com",
+    "port": 2324,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Foenix Rising (1)",
+    "host": "192.184.90.222",
+    "port": 256,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fool's Quarter BBS",
+    "host": "fqbbs.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Forem XE BBS",
+    "host": "foremxebbs.ddns.net",
+    "port": 9999,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Forgotten Memories",
+    "host": "dazexy.synology.me",
+    "port": 52323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Forze BBS",
+    "host": "bbs.opicron.eu",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Free Corner",
+    "host": "bbs.debonne.eu",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Freeside BBS",
+    "host": "freeside.bbs.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Freeway BBS",
+    "host": "freeway.vkradio.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "French Connection",
+    "host": "72.38.168.118",
+    "port": 31023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fria Bad BBS",
+    "host": "78.69.198.127",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Frozen Floppy BBS",
+    "host": "bbs.retrohack.se",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Frugal Computing BBS",
+    "host": "frugalbbs.com",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "fTelnet Demo Server",
+    "host": "bbs.ftelnet.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fuji Summit",
+    "host": "winnow.1q1.me",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Funtopia BBS",
+    "host": "funtopia.synchro.net",
+    "port": 3023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Furry Refuge",
+    "host": "bbs.furryrefuge.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Fusion BBS",
+    "host": "pruffino.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Future World II",
+    "host": "fw2.cnetbbs.net",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Futureland",
+    "host": "futureland.today",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Galactic Explorers TWGS",
+    "host": "galacticexplorers.servegame.com",
+    "port": 22002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Galaxy 74 BBS",
+    "host": "galaxy74bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Game Master",
+    "host": "bbs.game-master.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gamenet BBS Network",
+    "host": "gamenet.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gate BBS (Synchronet)",
+    "host": "thegateb.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gate BBS (WWIV)",
+    "host": "thegateb.synchro.net",
+    "port": 2424,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "GatorNet HQ BBS (Synchronet)",
+    "host": "73.102.102.106",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "GCC-BBS",
+    "host": "gcc-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "GDOS BBS",
+    "host": "gdos.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "GeekCafe.XYZ",
+    "host": "172.105.103.39",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Generation III Pot-D",
+    "host": "geniv.dyndns.org",
+    "port": 150,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Genetic-Point BBS",
+    "host": "g-point.tunk.org",
+    "port": 500,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ghosts in the Machine",
+    "host": "ghostmachine.ddns.net",
+    "port": 1717,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gibson BBS",
+    "host": "83.211.28.80",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "GigaBite BBS",
+    "host": "bbs.gigabite.se",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Global Chaos BBS",
+    "host": "globalchaosbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gods69.com BBS",
+    "host": "92.91.25.209",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Goldmine Community Door Game Server",
+    "host": "goldminedoors.com",
+    "port": 2513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Goof's Garage",
+    "host": "goofsgarage.com",
+    "port": 6464,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Goosenet BBS",
+    "host": "bbs.g00r00.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Greenhead BBS",
+    "host": "bbs.greenhead.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Greywolf's Den",
+    "host": "greywolf.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Gridlock BBS",
+    "host": "gridlock.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Grimoire BBS",
+    "host": "grimoirebbs.sytes.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Grinches Realm, The",
+    "host": "tgr.freeddns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ground Control BBS",
+    "host": "142.93.1.73",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Guardian of Forever",
+    "host": "guardian.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Guru BBS",
+    "host": "bbs.bajer.cz",
+    "port": 32,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Haciend El Bananas",
+    "host": "haciend.com",
+    "port": 8821,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hackerforce BBS",
+    "host": "bbs.hackerforce.de",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hackmeeting 0x1B BBS",
+    "host": "95.217.16.88",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hagar's Helpline",
+    "host": "hagars.org.uk",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Halcyon BBS",
+    "host": "halcyonbbs.scisweb.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Halls of Valhalla BBS",
+    "host": "hovalbbs.com",
+    "port": 2333,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ham Shack",
+    "host": "hamshack.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Happyland",
+    "host": "citadel.dc540.org",
+    "port": 23230,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Harbor BBS",
+    "host": "96.30.192.92",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hated Reality",
+    "host": "hatedreality.homeunix.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hawaii BBS Atari 8 Bit",
+    "host": "atari-bbs.zapto.org",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hax0r's Palace",
+    "host": "telnet.unknownrealm.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Heatwave",
+    "host": "heatwave.ddns.net",
+    "port": 9640,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Heights BBS",
+    "host": "heightsbbs.heightspc.net",
+    "port": 6860,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Herbies BBS II",
+    "host": "herbies-bbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Herbies BBS III",
+    "host": "herbies-bbs.ddns.net",
+    "port": 2424,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "HeXed BBS",
+    "host": "hexedbbs.com",
+    "port": 23999,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hidden BBS",
+    "host": "the-hidden.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hidden Paradise",
+    "host": "hpbbs.dyndns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hidden Paradise II",
+    "host": "hpbbs.dyndns.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "High Desert BBS",
+    "host": "highdesertbbs.ddns.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Highernest TWGS",
+    "host": "199.244.48.171",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "HispaMSX BBS",
+    "host": "bbs.hispamsx.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hobbit Station BBS",
+    "host": "wfido.ru",
+    "port": 1234,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hobby Line! BBS",
+    "host": "hobbylinebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hohimer BBS",
+    "host": "mail.hohimer.org",
+    "port": 1336,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hold Fast BBS",
+    "host": "interzone.annexia.xyz",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Holodeck BBS",
+    "host": "ufpgc.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hologram Computing BBS",
+    "host": "sbbs.hologramcomputing.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Honey-At-Home",
+    "host": "31.133.0.38",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Horizon BBS",
+    "host": "bbs.horizonbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "House of Baud BBS",
+    "host": "houseofbaud.com",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Huanian Xiaoji",
+    "host": "literature.twbbs.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "HyNET BBS",
+    "host": "bbs.hyena.network",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Hysteria BBS",
+    "host": "bbs.retrorewind.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "IB-BBS",
+    "host": "bbs.ibbs.be",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ICARUS",
+    "host": "44.31.91.213",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ice Castle BBS",
+    "host": "69.178.59.98",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Imzadi Box",
+    "host": "box.imzadi.de",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Inconsistency BBS",
+    "host": "66.228.57.87",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Infinite Dream BBS",
+    "host": "aws1.fmerino.com.br",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Infonet BBS",
+    "host": "bbs.rclabs.com.br",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Inner Core",
+    "host": "sbbs.ricin.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Insane Asylum (2)",
+    "host": "thepubbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Insane Asylum BBS (1)",
+    "host": "tiabbs.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Insomnia",
+    "host": "insomnia.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Integrated Telecommunications Centre",
+    "host": "itcbbs.ddns.net",
+    "port": 23000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Internal Dimension BBS",
+    "host": "bbs.idbbs.ca",
+    "port": 59,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Internetking's Tradewar 2002 Server",
+    "host": "tw.internetking.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Iowa Student Assc. BBS (ISCA)",
+    "host": "bbs.iscabbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "IPTIA BBS (Synchronet)",
+    "host": "bbs2.ipingthereforeiam.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ISIS Unveiled",
+    "host": "70.123.70.30",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Itchy Butt BBS (Color 64)",
+    "host": "itchybutt.org",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jacob's Hideout BBS",
+    "host": "bbs.jacobcat.app",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jamaica Joe's",
+    "host": "bbs.jamaicajoes.net",
+    "port": 8011,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Joe's Computer BBS",
+    "host": "joesbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jolly Roger BBS, The",
+    "host": "bbs.thejollyrogerbbs.com",
+    "port": 8023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "JumpStart BBS",
+    "host": "www.exciter.ws",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jungle BBS (1)",
+    "host": "junglebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jungle BBS (2)",
+    "host": "bbs.junglebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Jupiter",
+    "host": "jupiter.bbs.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "K-Pub MMUD",
+    "host": "vpn.kennedy.pub",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kalgoorlie Retro BBS",
+    "host": "bbs.theiguru.au",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kats Alley",
+    "host": "tka.8bitboyz.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kaypro BBS",
+    "host": "71.237.240.26",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "KCM BBS System",
+    "host": "zahrl.ddns.net",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "KD3net",
+    "host": "98.175.159.15",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "KD8HFX",
+    "host": "bbs.kd8hfx.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "KEEP BBS",
+    "host": "thekeep.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kernel Fortress",
+    "host": "kernelfortress.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Killed In Action BBS",
+    "host": "kia.zapto.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kilobaud",
+    "host": "bbs.kilobaud.xyz",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kilobyte",
+    "host": "24.166.43.233",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kingdom's End BBS (Synchronet)",
+    "host": "sbbs.kingdomsendbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kirika BBS",
+    "host": "andcycle.idv.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "KiwiMates",
+    "host": "96.231.233.47",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kludge BBS",
+    "host": "klud.ge",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Korenblom",
+    "host": "bbs.korenblom.nl",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kraaby Gamer BBS",
+    "host": "kraaby.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Kuehlbox",
+    "host": "kuehlbox.wtf",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lab BBS, The",
+    "host": "bbs.dicksonlabs.net",
+    "port": 2325,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lake House BBS",
+    "host": "lakehouse.lilpenguins.com",
+    "port": 2333,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Land of Frogs and Contemplation",
+    "host": "lofac.mintyfresh.love",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Land of the Lost",
+    "host": "landofthelost.ca",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Landover BBS",
+    "host": "landover.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Last Rangers' BBS",
+    "host": "lastrangers.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Leisure Time BBS",
+    "host": "bbs.riddells.net",
+    "port": 10023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Level 29",
+    "host": "bbs.fozztexx.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lexicon BBS (Image BBS)",
+    "host": "lexiconbbs.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Liane BBS",
+    "host": "bbs.vslib.cz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Liquid Digital",
+    "host": "98.212.225.126",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Live Wire BBS",
+    "host": "livewirebbs.com",
+    "port": 1025,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Local Yocal BBS",
+    "host": "localyocalbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Locked And Loaded BBS",
+    "host": "bbs.lockandloadedbbs.com",
+    "port": 223,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Looney Bin BBS!",
+    "host": "looneybinbbs.com",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lord.stabs.org",
+    "host": "lord.stabs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lost Cause Halfway House",
+    "host": "lostcause.house",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lost Caverns BBS",
+    "host": "tlcbbs.dynu.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lost Chord BBS (Commodore BBS)",
+    "host": "tlcbbs.synchro.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lost Chord BBS (Searchlight BBS)",
+    "host": "tlcbbs.synchro.net",
+    "port": 6023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lost Chord BBS (Synchronet BBS)",
+    "host": "tlcbbs.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lostways BBS",
+    "host": "98.144.7.205",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "LowCrash DEV BBS",
+    "host": "bbs.lowcrash.dev",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "LSNET Archive",
+    "host": "bbs.lsnet.dev",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lunar Mod",
+    "host": "bbs.beanzilla.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lunar Outpost",
+    "host": "lunarout.synchro.net",
+    "port": 8023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lunatics Unleashed BBS",
+    "host": "lunaticsunleashed.ddns.net",
+    "port": 2333,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "LV-426",
+    "host": "lv426bbs.hopto.org",
+    "port": 6464,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Lytical HackFund BBS",
+    "host": "134.209.40.1",
+    "port": 31337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "M. Station",
+    "host": "mstation.servebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "M0n.de BBS",
+    "host": "172.105.27.143",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Machdyne BBS",
+    "host": "206.189.226.31",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Made To Raid",
+    "host": "bbs.madetoraid.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Madman with a Blue Box",
+    "host": "madmanbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MadWorld BBS",
+    "host": "www.madworldbbs.com",
+    "port": 52146,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Magic Systems",
+    "host": "86.88.76.77",
+    "port": 6323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Magnum BBS",
+    "host": "magnumbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Maiden's Realm BBS",
+    "host": "bbs.maidensrealm.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Maiks Place BBS",
+    "host": "bbs.maik.ch",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Major Mudd",
+    "host": "majormud.gotdns.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MajorBBS Official Demo BBS",
+    "host": "bbs.themajorbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Maker BBS",
+    "host": "73.11.3.16",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Malte",
+    "host": "bbs.swedishchef.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Maniac Zone",
+    "host": "tmz.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Manic Modem BBS",
+    "host": "telnet.manic-modem.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mark Van Daele's TWGS",
+    "host": "game.tw2002.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Master Boot Record",
+    "host": "mbrserver.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MasterCom",
+    "host": "bbs.sunspothq.dyndns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mastodon",
+    "host": "mastodon.uy",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MaxBBS",
+    "host": "maxbbs.ddns.net",
+    "port": 24023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MBSE Professional Dev BBS",
+    "host": "phoenix.bnbbbs.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Medusa BBS",
+    "host": "medusagaming.ca",
+    "port": 230,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mega BBS Public BBS System",
+    "host": "themegabbs.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Memphis TW BBS",
+    "host": "bbs.memphistw.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Memphis TW TWGS",
+    "host": "bbs.memphistw.org",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Metal Zone",
+    "host": "tmzbbs01.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Metro Olografix",
+    "host": "bbs.olografix.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MicroBlaster TWGS",
+    "host": "microblaster.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Micropolis BBS",
+    "host": "89.58.56.146",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Microtown BBS",
+    "host": "microtownbbs.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Midnight Lounge",
+    "host": "67.149.17.69",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mimac Rebirth",
+    "host": "mimac.bizzi.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Missing Links",
+    "host": "mlinks.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Miya Net",
+    "host": "miyanet.moe",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mizuki Community (Newsmth BBS)",
+    "host": "bbs.newsmth.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Modemo Tider",
+    "host": "modematider.selstam.nu",
+    "port": 50023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Modern Retro, The",
+    "host": "173.217.78.103",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Moe's Tavern",
+    "host": "moetiki.ddns.net",
+    "port": 27,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mojo's World BBS",
+    "host": "mojo.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Monochrome",
+    "host": "mono.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Monterey BBS",
+    "host": "montereybbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Moon Base Alpha (TWGS)",
+    "host": "mba.dnsalias.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Moon Base Alpha (VADV)",
+    "host": "mba.dnsalias.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Moratahack",
+    "host": "moratahack.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MorningSide Mortuary",
+    "host": "mortuary.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mousenet",
+    "host": "bbs-mousenet.dynip.online",
+    "port": 8889,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mozy's Swamp and Red Dwarf BBS",
+    "host": "bbs.mozysswamp.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mozy's Swamp and Red Dwarf TWGS",
+    "host": "bbs.mozysswamp.org",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MSmac BBS",
+    "host": "msmacbbs.maletazul.pt",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MtlGeek (Synchronet)",
+    "host": "mtlgeek.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MtlGeek (TWGS)",
+    "host": "mtlgeek.synchro.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Muinet",
+    "host": "muinet.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MULTINUBE-BBS",
+    "host": "multinube.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Murphy BBS",
+    "host": "94.32.85.38",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Music Station",
+    "host": "bbs.bsrealm.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mutiny BBS (1)",
+    "host": "mutinybbs.com",
+    "port": 2332,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mutiny BBS (2)",
+    "host": "mutiny.cigdangle.com",
+    "port": 65023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mutiny Community",
+    "host": "mutinybbs.com",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "MV2K BBS",
+    "host": "mv2k.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "My Retro Computer",
+    "host": "myretrocomp.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mysmth BBS",
+    "host": "bbs.mysmth.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mysteria Majicka BBS",
+    "host": "majicka.at2k.org",
+    "port": 1955,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mystic Hobbies",
+    "host": "mystic-hobbies.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mystic Night BBS",
+    "host": "69.244.173.57",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mystic Realms",
+    "host": "mysticrealms.ddns.net",
+    "port": 11000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mystic Rhythms BBS",
+    "host": "mystic.wwivbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mystical Realm BBS",
+    "host": "mysticalrealmbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mythical Kingdom Tech BBS",
+    "host": "ice.lilacway.com",
+    "port": 3000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Mythical Kingdom Tech SBBS",
+    "host": "bbs.mythicalkingdom.com",
+    "port": 5023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nanyang Inn",
+    "host": "bbs.nykz.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NE BBS",
+    "host": "nebbs.servehttp.com",
+    "port": 9223,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NerdRage BBS",
+    "host": "142.90.39.212",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nervous Hospital",
+    "host": "thenervoushospital.com",
+    "port": 1996,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Netpoint BBS",
+    "host": "netpoint.webhop.me",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Netpoint TWGS",
+    "host": "netpoint.webhop.me",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nettwerked BBS",
+    "host": "nettwerked.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NetVillage Sysop Community",
+    "host": "96.231.233.50",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Never Never Land BBS",
+    "host": "neverneverlandbbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "New World of the Internet",
+    "host": "209.141.35.127",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nexus BBS",
+    "host": "nexus.aefinity.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Night Owl BBS",
+    "host": "nightowlbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nightbite BBS",
+    "host": "nightbite.redirectme.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nikom BBS",
+    "host": "bbs.nikom.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nine Worlds BBS",
+    "host": "thenineworlds.dnshome.de",
+    "port": 923,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ninjalane Labs BBS",
+    "host": "209.161.6.234",
+    "port": 223,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nite Eyes BBS",
+    "host": "bbs.lizardmaster.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NiteLite BBS",
+    "host": "nitelite.ddns.net",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nitro Store",
+    "host": "100.24.206.238",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "No Carrier BBS",
+    "host": "bbs.wehack.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Northern Palace",
+    "host": "thenorthernpalace.com",
+    "port": 2020,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NostalMania",
+    "host": "nostalmania.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nottingham BBS",
+    "host": "nottinghambbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Noverdu",
+    "host": "noverdu.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "NoWhere TWGS",
+    "host": "joestavern.ddns.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nuclear Club",
+    "host": "nuke.club",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nut Asylum (Mystic)",
+    "host": "xtcbox.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Nut Asylum (Wildcat)",
+    "host": "xtcbox.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Oasis BBS",
+    "host": "oasisbbs.hopto.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Off The Wall",
+    "host": "offthewall.dmxrob.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Oiran Alien Museum",
+    "host": "libido.cx",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Old Highland Borg",
+    "host": "ohb.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Old Net BBS",
+    "host": "theoldnet.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Old School BBS",
+    "host": "oldschool.synchronetbbs.org",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Old Time BBS (Mystic)",
+    "host": "oldtimebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Old Time's Sake BBS",
+    "host": "otsbbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Oldest Future Object",
+    "host": "ofo.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Onix BBS",
+    "host": "onixbbs.servebbs.com",
+    "port": 2525,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Onyx",
+    "host": "185.139.32.178",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Operation Ivy BBS",
+    "host": "opivy-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Optical Illusion BBS",
+    "host": "optical.c64bbs.nu",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "OPTO 22 BBS",
+    "host": "bbs.opto22.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Orchestra BBS",
+    "host": "sacrebase.mywire.org",
+    "port": 486,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Oshaboy BBS",
+    "host": "top-swadba.de",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Outer Limits, The",
+    "host": "24.96.157.17",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Outpost 9 (BBS)",
+    "host": "bbs.outpost9.co",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Outpost 9 (TWGS)",
+    "host": "tradewars.outpost9.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Outpost BBS",
+    "host": "bbs.outpostbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Outwest BBS",
+    "host": "outwest.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "P.U.L.S.E. BBS World HQ",
+    "host": "pulsebbs.hopto.org",
+    "port": 1984,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Paladium BBS",
+    "host": "paladium.servebbs.com",
+    "port": 20,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Palantir BBS",
+    "host": "palantirbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "PapiChulo's MajorBBS",
+    "host": "75.31.92.35",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Paradox BBS (1)",
+    "host": "paradoxbbs.synchronetbbs.org",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Paradox BBS (2)",
+    "host": "18.222.210.54",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Paranoid BBS",
+    "host": "88.80.185.171",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Part-Time BBS",
+    "host": "ptbbs.ddns.net",
+    "port": 8000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Particles! BBS",
+    "host": "particlesbbs.dyndns.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Party Bowl BBS",
+    "host": "partybowlbbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Path Unknown BBS",
+    "host": "pathunknown.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pebkac.lol",
+    "host": "pebkac.lol",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Penalty Box BBS",
+    "host": "thepenaltybox.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pepzi BBS",
+    "host": "pepzi.eu",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Performance Leasing Systems",
+    "host": "97.76.12.194",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Personal Home Cloud",
+    "host": "75.26.216.248",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pesto BBS",
+    "host": "bbs.pewp.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Petit Caillou BBS",
+    "host": "bbs.jayscafe.net",
+    "port": 6402,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phantasm",
+    "host": "phantasm.bbs.io",
+    "port": 4489,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phantom BBS",
+    "host": "bbs.phantombbs.info",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phaseshift",
+    "host": "174.1.49.147",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phatstar Teleporter",
+    "host": "198.71.48.13",
+    "port": 7777,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phoenix BBS",
+    "host": "phoenix.bnbbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Phospher BBS",
+    "host": "bbs.phospher.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "PhreakNet",
+    "host": "bbs.phreaknet.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "PipeLine BBS",
+    "host": "bbs.wantit.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Piranha BBS",
+    "host": "blackflag.acid.org",
+    "port": 27,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pirate's Cove TWGS",
+    "host": "38.188.130.43",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pixelgrounds BBS (Enigma 1/2)",
+    "host": "bbs.pixelgrounds.net",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pixelgrounds BBS (Worldgroup)",
+    "host": "bbs.pixelgrounds.net",
+    "port": 8887,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Planet Afr0",
+    "host": "planetafr0.org",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Plasma Sphere BBS",
+    "host": "84.92.196.99",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Play LORD",
+    "host": "playlord.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "PlayMajorMUD.com",
+    "host": "playmajormud.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "PMF BBS",
+    "host": "bbs.venerandi.it",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Poignant Beacon (Pharos BBS)",
+    "host": "bbs.pharos.rocks",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Port of Call BBS (Renegade)",
+    "host": "pocbbs.duckdns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Port of Call BBS (Synchronet)",
+    "host": "pocbbs.duckdns.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pot O' Gold BBS",
+    "host": "50.69.236.52",
+    "port": 2513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pro-Kegs",
+    "host": "proline.ksherlock.com",
+    "port": 6523,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Protoweb BBS",
+    "host": "45.79.37.227",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Proud Pirates Cove",
+    "host": "ppc.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Pweck's Retreat BBS",
+    "host": "pwecksretreat.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "QL Dump",
+    "host": "001english-eu.no-ip.biz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Quantum Wormhole, The",
+    "host": "bbs.erb.pw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Quazar BBS Door Game Server",
+    "host": "quazarbbs.dynu.net",
+    "port": 2523,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Quest TWGS",
+    "host": "thequesttwgs.game-host.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Radio Freaks & Geeks",
+    "host": "radiostream.amigaz.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ragnarok's BBS",
+    "host": "186.189.236.69",
+    "port": 23021,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Raiders Inc. BBS",
+    "host": "raidersbbs.zapto.org",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ralser Lab BBS & BBSradio",
+    "host": "euklid.ddns.net",
+    "port": 5745,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RAMifications",
+    "host": "bbs.ramifications.ca",
+    "port": 5128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RapidFire",
+    "host": "rapidfire.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rats Den BBS",
+    "host": "bbs.catracing.org",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Raven of the Storm",
+    "host": "50.20.127.213",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Raveolution",
+    "host": "raveolution.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rayzer's BBS",
+    "host": "mail.hohimer.org",
+    "port": 1336,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RayzerNET BBS",
+    "host": "connect.rayzer.net",
+    "port": 2112,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Razz Pie BBS",
+    "host": "razzpie.ddns.net",
+    "port": 2300,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RBB Systems Int'l",
+    "host": "rbb.fidonet.fi",
+    "port": 32,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RC-BOX",
+    "host": "rc2014.ddns.net",
+    "port": 2014,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Realitycheck BBS",
+    "host": "realitycheckbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Realm BBS",
+    "host": "therealm.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Realm of Darkness",
+    "host": "bbs.trod.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Realm of Serion",
+    "host": "connect.serionbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Realm of the Wizard's Lair",
+    "host": "bbs.b-wells.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Red Dragon BBS",
+    "host": "108.52.154.224",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Region 15 HQ",
+    "host": "region15.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ReichBBS",
+    "host": "64.127.144.48",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reid BBS",
+    "host": "192.227.222.151",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reign of Fire",
+    "host": "call.rofbbs.com",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reign of Fire II",
+    "host": "call.rofbbs.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reign of Fire III",
+    "host": "call.rofbbs.com",
+    "port": 8502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reticulum Ace",
+    "host": "bbs.acehoss.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retro Archive",
+    "host": "bbs.retroarchive.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retro Running BBS",
+    "host": "retrorunning.ddns.net",
+    "port": 8880,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retro Unboxers",
+    "host": "flashbackbbs.sytes.net",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retro16 BBS",
+    "host": "mail.drf-solutions.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retro32 BBS",
+    "host": "bbs.retro32.com",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retroaktiv BBS",
+    "host": "retr0aktiv.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retroconnect",
+    "host": "retroconnect.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RetroDigital BBS",
+    "host": "rdnetbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retrogaming Activities",
+    "host": "react-bbs.nikoh.it",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retrograde BBS",
+    "host": "rtg.dyndns.biz",
+    "port": 6428,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Retrograde II BBS",
+    "host": "cib.dyndns.org",
+    "port": 6404,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RetroLair BBS",
+    "host": "retrolair.amigaretro.net",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RetroNet Neo",
+    "host": "retronetneo.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RetroSwim BBS",
+    "host": "ezycom.retroswim.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Reverse Polarity",
+    "host": "revpol.lovelybits.org",
+    "port": 1337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Richard's Fun House",
+    "host": "richardf.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ricks BBS",
+    "host": "ricksbbs.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rise N' Shine BBS",
+    "host": "rns.risenshinebbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "River Styx BBS",
+    "host": "riverstyx.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RMSBBS",
+    "host": "rmsbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rock BBS III",
+    "host": "therockbbs.net",
+    "port": 10023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rogue Galaxy TWGS",
+    "host": "tw.roguegalaxy.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Roon's BBS",
+    "host": "bbs.roonsbbs.hu",
+    "port": 1212,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "RougeNet BBS",
+    "host": "bbs.roguenet.work",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Roughneck BBS",
+    "host": "host.roughneckbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rougue BBS (Chinese)",
+    "host": "35.201.128.35",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Rusty Mailbox",
+    "host": "trmb.ca",
+    "port": 2030,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sanctuary BBS",
+    "host": "sanctuary.zapto.org",
+    "port": 1541,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sanctum II BBS (Mystic)",
+    "host": "sanctumbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sandnes BBS",
+    "host": "stokmarknes.org",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sands of Time",
+    "host": "162.243.54.214",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Santronics R&D Beta Site",
+    "host": "3.132.92.116",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Santronics Software",
+    "host": "online.winserver.com",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SBB Systems",
+    "host": "bbs.sbbsystems.com",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Scene List (1)",
+    "host": "scenelist.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Scene List (2)",
+    "host": "87.212.201.57",
+    "port": 4000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Scooby's Doo BBS",
+    "host": "scoobysdoo.ddns.net",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Scratched Reality",
+    "host": "reality.throwbackbbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SD2IEC Test BBS",
+    "host": "cib.dyndns.org",
+    "port": 6403,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SDF-1 BBS",
+    "host": "bbs.sdf1.net",
+    "port": 5023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sea Breeze Gaming Network (Synchronet)",
+    "host": "seabreeze.servegame.com",
+    "port": 31,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sea Breeze Gaming Network (TWGS)",
+    "host": "seabreeze.servegame.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sea of Fantasy",
+    "host": "seaoffantasy.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Seattle BBS (Chinese)",
+    "host": "seattle.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Section 31 TWGS",
+    "host": "sector31.lorfinglab.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Septima Corporate BBS",
+    "host": "3.72.83.34",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shadow BBS",
+    "host": "shadowbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ShadoWorks BBS",
+    "host": "bbs.shadoworks.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shadowscope",
+    "host": "shadowscope.noip.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shamrock BBS",
+    "host": "104.246.170.121",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shenk's Express",
+    "host": "shenksxp.dyndns.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shift-Bits BBS",
+    "host": "bbs.shift-bits.com",
+    "port": 2000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shipwrecks & Shibboleths",
+    "host": "shibboleths.org",
+    "port": 800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shodan's Core",
+    "host": "shodanscore.com",
+    "port": 8086,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Shurato's Heavenly Sphere",
+    "host": "shsbbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Silent Node BBS",
+    "host": "silentnode.ddns.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SiliconGraphics BBS",
+    "host": "bbs.flexion.io",
+    "port": 7777,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SiliconUnderground",
+    "host": "siliconu.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sinclair Retro BBS",
+    "host": "retrobbs.sinclair.homepc.it",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sinner's Heaven",
+    "host": "207.246.74.70",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Skara Brea",
+    "host": "80.7.90.17",
+    "port": 31337,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Skynet BBS (1)",
+    "host": "47.25.173.251",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Skynet BBS (2)",
+    "host": "bbs.skynetbbs.com",
+    "port": 20023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Slackers BBS",
+    "host": "slackers.ovh",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Slasher BBS",
+    "host": "162.118.68.104",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Slime City BBS",
+    "host": "bbs.retrohack.se",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Snobsoft BBS",
+    "host": "snobsoft.de",
+    "port": 6401,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Soft Solutions",
+    "host": "bbs.softsolutions.net.br",
+    "port": 2023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sorcerors Isle",
+    "host": "96.231.233.53",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sotano MSX BBS",
+    "host": "sotanomsxbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sounds of Silence BBS",
+    "host": "sos-bbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "South Central",
+    "host": "southcentral.se",
+    "port": 1023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SouthEast Star",
+    "host": "sestar.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Southern Amis",
+    "host": "southernamis.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SpaceSST BBS",
+    "host": "gallaxial.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Spades BBS",
+    "host": "spades.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Spaghetti Hut",
+    "host": "spaghettihut.amigaretro.net",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Spark Beer BBS",
+    "host": "bbs.spark.beer",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Splatter Haus",
+    "host": "splatter.haus",
+    "port": 666,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sprawl BBS",
+    "host": "202.61.251.17",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Squared Circle BBS",
+    "host": "45.79.93.198",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Star Collision BBS",
+    "host": "scbbs.nsupdate.info",
+    "port": 61023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Star Fleet HQ",
+    "host": "bbs.sfhqbbs.org",
+    "port": 5983,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Star Flight BBS",
+    "host": "stateoftheark.ca",
+    "port": 1990,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Star Killer's TWGS",
+    "host": "sk-twgs.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Star Mansion Returns",
+    "host": "66.23.221.29",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Starbase 11 BBS",
+    "host": "bbs.starbase11.de",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Starbase 21",
+    "host": "bbs.starbase21.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "StarDoc 134",
+    "host": "bbs.stardoc134.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Starship Junkyard",
+    "host": "bbs.starshipjunkyard.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Steven's Hive BBS",
+    "host": "stevensbbs.stevenshive.xyz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Storm BBS",
+    "host": "telnet.stormbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Stormgate BBS",
+    "host": "stormgate.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Strange Planet BBS",
+    "host": "strangeplanet.org",
+    "port": 6800,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Street Corner BBS",
+    "host": "streetcorner.ddns.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Strip It To Ride",
+    "host": "104.142.112.149",
+    "port": 9000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Subcarrier BBS",
+    "host": "subcarrier.ignorelist.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Subhuman",
+    "host": "subhuman.ddns.net",
+    "port": 1338,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sugar Test BBS",
+    "host": "bbs.lizsugar.me",
+    "port": 6000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sumxin BBS (Chinese)",
+    "host": "39.105.182.131",
+    "port": 6666,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Super Dimension Fortress (SDF-1)",
+    "host": "sdf.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Support BBS",
+    "host": "bbs.ddybing.no",
+    "port": 1223,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Surf Shop BBS (1)",
+    "host": "ssbbs.ddns.net",
+    "port": 6510,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sursum Corda TWGS",
+    "host": "sursum-corda.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sursum Corda! BBS",
+    "host": "sursum-corda.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Swap BBS",
+    "host": "dose.0wnz.at",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SWATS BBS",
+    "host": "swatsbbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Swedish User Group Of Amiga",
+    "host": "suga.se",
+    "port": 42512,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "SwissIRC BBS",
+    "host": "bbs.swissirc.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Swords Of Chaos Forever BBS",
+    "host": "bbs.soc4ever.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Synchronix",
+    "host": "nix.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Synerchat",
+    "host": "synerchat.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Sysop Solaris Dot Com (Menu)",
+    "host": "sysopsolaris.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "System One BBS",
+    "host": "cib.dyndns.org",
+    "port": 6491,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "T0kerz Hut",
+    "host": "t0kerZ.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Taco Pronto",
+    "host": "tacopronto.bbs.io",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Talon's Tradewars Roost TWGS",
+    "host": "38.86.95.31",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TARDIS BBS (1)",
+    "host": "bbs.cortex-media.info",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TARDIS BBS (2)",
+    "host": "rg1.retrogoldbbs.com",
+    "port": 6411,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tassie Bob BBS",
+    "host": "bbs.tassiebob.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Technoanarchy",
+    "host": "technoanarchy.synchronetbbs.org",
+    "port": 513,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Techrono BBS",
+    "host": "techrono.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Techware",
+    "host": "bbs.techware2k.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TelBox",
+    "host": "telbox.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Telehack",
+    "host": "telehack.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tempest Fury BBS",
+    "host": "tempestfury.d2g.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Terminal Obsession",
+    "host": "terminal-obsession.hopto.org",
+    "port": 1541,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Terra Brasilis",
+    "host": "tbrasilis.ddns.net",
+    "port": 23000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Terran Empire",
+    "host": "73.178.46.44",
+    "port": 1017,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TFSI BBS",
+    "host": "bbs.tfsi.dev",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "The BBS",
+    "host": "24.237.16.152",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "This Old Cabin (English)",
+    "host": "bbs.thisoldcabin.net",
+    "port": 6464,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "This Old Cabin (Swedish)",
+    "host": "bbs.thisoldcabin.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Thrace BBS",
+    "host": "bbs.tabakov.net",
+    "port": 13023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Three Blind Mice",
+    "host": "threeblindmice.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Throwback BBS",
+    "host": "bbs.throwbackbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Thunder BBS",
+    "host": "149.56.47.118",
+    "port": 1023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Thunder-Line BBS",
+    "host": "thunder.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Thunderbolt BBS",
+    "host": "wx4qzbbs.ddnsfree.com",
+    "port": 49815,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tigernet BBS",
+    "host": "tigernet.dewindt.us",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tilde BBS",
+    "host": "tilde.sbs",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Time Air BBS",
+    "host": "clients.renebates.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Time Warp BBS",
+    "host": "twb.wrgnbr.com",
+    "port": 6896,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Time Warp of Future",
+    "host": "time.synchro.net",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Timelord BBS",
+    "host": "teehill.adirondackpc.com",
+    "port": 2020,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Titantic BBS Telnet, The",
+    "host": "ttb.rgbbs.info",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tomato Place",
+    "host": "bbs.tomato.place",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tommy's Holiday Camp",
+    "host": "vintage.thcbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Too Lazy BBS",
+    "host": "toolazy.synchro.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tool Shed",
+    "host": "toolshed.synchro.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Toxic Laboratory BBS",
+    "host": "toxicbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TQPS",
+    "host": "tqps.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Trade Wars Academy TWGS",
+    "host": "tradewarsacademy.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Transfer Interruped BBS",
+    "host": "news.belchi.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Triangles Mafia",
+    "host": "bbs.trianglesmafia.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tsinghua Univ. (Fengqiao Stn.)",
+    "host": "bbs.cs.nthu.edu.tw",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TuxedoCat Lounge",
+    "host": "bbs.tuxedocatbbs.com",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TVRi BBS",
+    "host": "178.162.214.70",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "TW Lounge BBS",
+    "host": "bbs.twlounge.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Twilight Zone",
+    "host": "tzone.nxly.org",
+    "port": 5000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Twixed BBS",
+    "host": "twixed.net",
+    "port": 62323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Two Girl BBS",
+    "host": "bbs.2girl.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Tycho Station",
+    "host": "bbs.tychostation.it",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Ultimate World Online BBS",
+    "host": "67.163.148.95",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Uncensored!",
+    "host": "uncensored.citadel.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Uncomfortable Business",
+    "host": "bbs.uncomfortable.business",
+    "port": 6423,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Undercurrents BBS",
+    "host": "undercurrents.io",
+    "port": 8088,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Underground BBS",
+    "host": "www.theunderground.us",
+    "port": 10023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Undermine BBS",
+    "host": "bbs.undermine.ca",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Undernet BBS",
+    "host": "undernet.uy",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Unicyber BBS",
+    "host": "bbs.unicyber.co.uk",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Unix-Bit BBS",
+    "host": "x-bit.org",
+    "port": 1336,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Unknown Realm (Mystic)",
+    "host": "turealm.no-ip.org",
+    "port": 3023,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Unknown Realm (PCBoard)",
+    "host": "turealm.no-ip.org",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Unleashed BBS",
+    "host": "www.unleashedinet.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "UORealms BBS",
+    "host": "bbs.uorealms.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "US 99 BBS",
+    "host": "bbs.quinnnet.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "UserClub BBS",
+    "host": "userclub-bbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "USS Excelsior BBS",
+    "host": "excelsiorbbs.ddns.net",
+    "port": 2000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Util's Retro BBS",
+    "host": "retro.setsuid.net",
+    "port": 8221,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Uzi Suicide",
+    "host": "uzisuicide.servebbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "V01d C1ph3r",
+    "host": "bbs.canerduh.com",
+    "port": 23056,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vague BBS",
+    "host": "vague.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Valley BBS (1)",
+    "host": "valleybbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Valley BBS (2)",
+    "host": "valley64.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vault BBS",
+    "host": "thevaultbbs.ddns.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Veleno BBS",
+    "host": "velenobbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Verify-Nebula",
+    "host": "verify-nebula.kicks-ass.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vern BBS",
+    "host": "vern.cc",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vertrauen",
+    "host": "vert.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Video Game Nirvana",
+    "host": "173.90.55.126",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Violeti BBS",
+    "host": "violetyggdrasil.live",
+    "port": 1144,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Viper BBS, The",
+    "host": "theviperbbs.ddnsfree.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Viper's Pit TWGS",
+    "host": "sk-twgs.com",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "VK7HDM's BBS",
+    "host": "workstation.ddmcomputers.com.au",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vodnet BBS",
+    "host": "my-workspace.us",
+    "port": 6764,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "VOID BBS",
+    "host": "voidbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vortex BBS (1)",
+    "host": "vortexbbs.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Vortex BBS (2)",
+    "host": "vortex.redirectme.net",
+    "port": 3777,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "W4BFB",
+    "host": "packet.w4bfb.org",
+    "port": 2333,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "WABAC Machine BBS",
+    "host": "wabac.ccsnet.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wall BBS",
+    "host": "99.53.196.18",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "War Ensemble BBS",
+    "host": "warensemble.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wassup",
+    "host": "wassup.the.net.nz",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wastelands BBS",
+    "host": "wastelands-bbs.net",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wastelands BBS II",
+    "host": "wastelands-bbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Weather Station BBS",
+    "host": "bbs.weather-station.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Weed Net",
+    "host": "weednet.synchronetbbs.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Westland BBS",
+    "host": "bbs.korenblom.nl",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Westwood BBS",
+    "host": "westwoodbbs.net",
+    "port": 64738,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Whisky Lover's Amateur Radio BBS",
+    "host": "wd1cks.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Who Dares Wins Amiga BBS",
+    "host": "whodareswinsbbs.uk",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wicked Garden BBS",
+    "host": "wgbbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wildcat's Castle BBS",
+    "host": "bbs.wccastle.net",
+    "port": 2424,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Willamette Apple Connection (WAC) BBS",
+    "host": "wacbbs.ddns.net",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Willow Creek BBS",
+    "host": "willowcreekbbs.dynu.net",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Windows 10 City",
+    "host": "win10.retro-os.live",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Windy City Study House",
+    "host": "bbs.windcity.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wintermute BBS",
+    "host": "wintermutebbs.ddns.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wizard's Castle",
+    "host": "wccastle.synchro.net",
+    "port": 24,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wizard's Rainbow",
+    "host": "wizardsrainbow.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wizzy BBS",
+    "host": "wizzybbs.win",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "WORD BBS",
+    "host": "wordbbs.hopto.org",
+    "port": 64128,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Worlds Apart (TWGS)",
+    "host": "tw.worldsapart.net",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wormhole II BBS",
+    "host": "wh2bbs.us",
+    "port": 2321,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wreck Hall",
+    "host": "bbs.wreckhall.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wretched Beagle BBS",
+    "host": "bbs.wretchedbeagle.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wrong Number ][ BBS",
+    "host": "wn2.wrgnbr.com",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wrong Number ][ BBS Retro 1993!!",
+    "host": "wn6.wrgnbr.com",
+    "port": 6411,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wrong Number ][ V2.0",
+    "host": "cib.dyndns.org",
+    "port": 6405,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wrong Number ]I[ BBS",
+    "host": "wn3.wrgnbr.com",
+    "port": 6400,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Wrong Number IV BBS",
+    "host": "wn4.wrgnbr.com",
+    "port": 3000,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "X-Bit BBS",
+    "host": "x-bit.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "X65.zone BBS (1)",
+    "host": "bbs.x65.zone",
+    "port": 8888,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Xibalba",
+    "host": "xibalba.l33t.codes",
+    "port": 44510,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "YOUR SYSTEM NAME HERE",
+    "host": "50.47.85.64",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zelch BBS",
+    "host": "coffeemud.net",
+    "port": 6502,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ZenBBS",
+    "host": "zen.kawasu.wtf",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zenolab",
+    "host": "zenolab.synchro.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "ZeroTwo's BBS",
+    "host": "bbs.zerotwo.tech",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zeus BBS",
+    "host": "192.243.111.121",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zone BBS",
+    "host": "zonebbs.net",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zooropa BBS",
+    "host": "52.4.41.44",
+    "port": 2323,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zot TWGS",
+    "host": "tw2002.zot.org",
+    "port": 2002,
+    "protocol": "telnet",
+    "notes": ""
+  },
+  {
+    "name": "Zruspa's BBS",
+    "host": "bbs.zruspas.org",
+    "port": 23,
+    "protocol": "telnet",
+    "notes": ""
   }
 ]

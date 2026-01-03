@@ -1,3 +1,4 @@
+// ...existing code...
 console.log('=== Shift-Term app.js loading ===');
 
 // Wait for DOM to be ready
@@ -103,6 +104,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     console.log('Terminal initialized successfully');
     setStatus('Ready - Enter host and click Connect');
+    // Show default message in terminal on initial load
+    term.clear();
+    term.write('\x1Bc');
+    term.reset && term.reset();
+    term.write('\r\nTerminal Ready.... Select A BBS from phonebook to connect.\r\n');
   } catch (err) {
     console.error('Terminal init error:', err);
     setStatus('Terminal init failed: ' + err.message);
@@ -334,6 +340,65 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('Disconnect button handler attached');
   }
 
+    // Import button and file input
+    const importEntryBtn = document.getElementById('importEntryBtn');
+    const importFileInput = document.getElementById('importFileInput');
+
+    if (importEntryBtn && importFileInput) {
+      importEntryBtn.addEventListener('click', () => {
+        importFileInput.value = '';
+        importFileInput.click();
+      });
+
+      importFileInput.addEventListener('change', async (e) => {
+        const file = importFileInput.files[0];
+        if (!file) {
+          setStatus('No file selected');
+          return;
+        }
+        setStatus('Importing BBS list...');
+        try {
+          const text = await file.text();
+          console.log('Import file contents:', text);
+          // Improved parsing: look for lines with 'Name' and 'Host:Port' separated by 2+ spaces
+          const lines = text.split(/\r?\n/).filter(l => l.trim());
+          const imported = [];
+          for (const line of lines) {
+            // Skip header/footer and lines without a host
+            if (/^(\*|=|-|Copyright|Web:|Telnet:|E-mail|EMAIL:|NOTE:|DISTRIBUTION|WHERE TO FIND|All Telnet|If you find|This file|\s*$)/i.test(line)) continue;
+            // Match: Name [2+ spaces] Host[:Port]
+            const match = line.match(/^(.+?)\s{2,}([\w\.-]+(?:\.[\w\.-]+)*)(?::(\d+))?/);
+            if (match) {
+              const name = match[1].trim();
+              const host = match[2].trim();
+              const port = match[3] ? parseInt(match[3], 10) : 23;
+              if (name && host) {
+                imported.push({ name, host, port, protocol: 'telnet', notes: '' });
+              }
+            }
+          }
+          console.log('Parsed imported entries:', imported);
+          if (!imported.length) {
+            setStatus('No valid BBS entries found in file');
+            return;
+          }
+          // Keep top 3 phonebook entries, add imported below
+          const top3 = phonebookEntries.slice(0, 3);
+          phonebookEntries = [...top3, ...imported];
+          // Save all imported entries (replace all except top 3)
+          await window.api.savePhonebookEntry({ action: 'replaceAll', entries: phonebookEntries });
+          await refreshPhonebook();
+          setStatus(`Imported ${imported.length} BBS entries`);
+        } catch (err) {
+          console.error('Import error:', err);
+          setStatus('Import failed: ' + err.message);
+        }
+      });
+      console.log('Import button and file input handlers attached');
+    } else {
+      console.error('Import button or file input NOT FOUND!');
+    }
+
   // Enter key triggers connect
   if (hostInput) {
     hostInput.onkeydown = (e) => {
@@ -433,10 +498,32 @@ document.addEventListener('DOMContentLoaded', async () => {
     return result;
   }
 
+
+
   // Incoming data - convert CP437 to Unicode
   window.api.onData((chunk) => {
     if (term) {
-      const converted = cp437ToUtf8(chunk);
+      // Debug: Log raw incoming data (show control chars as hex)
+      const rawHex = Array.from(chunk).map(c => {
+        const code = c.charCodeAt(0);
+        return code < 32 || code > 126 ? `<${code.toString(16)}>` : c;
+      }).join('');
+      console.log('[BBS RAW]', rawHex);
+
+      // Detect ANSI clear screen (ESCc or ESC[2J) at the START of the chunk
+      let chunkToWrite = chunk;
+      if (chunk.startsWith('\x1Bc') || chunk.startsWith('\x1B[2J') || chunk.startsWith('\u001Bc') || chunk.startsWith('\u001B[2J')) {
+        term.clear();
+        // Remove the clear code from the chunk so it doesn't get written again
+        if (chunk.startsWith('\x1Bc') || chunk.startsWith('\u001Bc')) {
+          chunkToWrite = chunk.slice(2);
+        } else if (chunk.startsWith('\x1B[2J') || chunk.startsWith('\u001B[2J')) {
+          chunkToWrite = chunk.slice(4);
+        }
+      }
+      const converted = cp437ToUtf8(chunkToWrite);
+      // Debug: Log converted output
+      console.log('[BBS CONVERTED]', converted);
       term.write(converted);
     }
   });
@@ -445,8 +532,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.api.onStatus((s) => {
     console.log('Status update:', s);
     if (s.type === 'connected') {
+      if (term) {
+        term.clear();
+        term.write('\x1Bc'); // Send ANSI full reset (ESC c)
+        term.reset && term.reset(); // If xterm.js reset() is available
+      }
       setStatus(`Connected to ${s.host}:${s.port}`);
     } else if (s.type === 'disconnected') {
+      if (term) {
+        term.clear();
+        term.write('\x1Bc');
+        term.reset && term.reset();
+        term.write('\r\nTerminal Ready.... Select A BBS from phonebook to connect.\r\n');
+      }
       setStatus('Disconnected');
     } else if (s.type === 'error') {
       setStatus(`Error: ${s.message}`);

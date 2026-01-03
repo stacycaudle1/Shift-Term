@@ -49,6 +49,10 @@ app.on('window-all-closed', () => {
 
 // Simple Telnet client with minimal negotiation (NAWS + TTYPE)
 class TelnetClient {
+    // Handle Telnet subnegotiation (currently a no-op)
+    _handleSub(opt, data) {
+      // No operation; can be extended for TTYPE, NAWS, etc.
+    }
   constructor(getWin) {
     this.getWin = getWin;
     this.socket = null;
@@ -268,37 +272,38 @@ ipcMain.handle('readPhonebook', async () => {
   return [{ name: 'Shift-Bits BBS', host: 'bbs.shift-bits.com', port: 2003, protocol: 'telnet' }];
 });
 
-ipcMain.handle('savePhonebookEntry', async (_e, { action, index, entry }) => {
+ipcMain.handle('savePhonebookEntry', async (_e, { action, index, entry, entries: importedEntries }) => {
   const appPathFile = path.join(app.getAppPath(), 'data', 'phonebook.json');
   const cwdFile = path.join(process.cwd(), 'data', 'phonebook.json');
   
   // Try to read from cwd first, then app path
-  let entries = [];
+  let phonebookEntries = [];
   let file = cwdFile;
   
   try {
-    entries = JSON.parse(fs.readFileSync(cwdFile, 'utf8'));
+    phonebookEntries = JSON.parse(fs.readFileSync(cwdFile, 'utf8'));
     file = cwdFile;
   } catch {
     try {
-      entries = JSON.parse(fs.readFileSync(appPathFile, 'utf8'));
+      phonebookEntries = JSON.parse(fs.readFileSync(appPathFile, 'utf8'));
       file = appPathFile;
     } catch {
       // Start fresh
-      entries = [];
+      phonebookEntries = [];
       file = cwdFile;
     }
   }
   
   console.log('Phonebook action:', action, 'index:', index, 'file:', file);
   
-  if (action === 'add') entries.push(entry);
-  else if (action === 'edit' && index >= 0) entries[index] = entry;
-  else if (action === 'delete' && index >= 0) entries.splice(index, 1);
+  if (action === 'add') phonebookEntries.push(entry);
+  else if (action === 'edit' && index >= 0) phonebookEntries[index] = entry;
+  else if (action === 'delete' && index >= 0) phonebookEntries.splice(index, 1);
+  else if (action === 'replaceAll' && Array.isArray(importedEntries)) phonebookEntries = importedEntries;
   
   // Ensure directory exists
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify(entries, null, 2));
-  console.log('Phonebook saved:', entries.length, 'entries');
+  fs.writeFileSync(file, JSON.stringify(phonebookEntries, null, 2));
+  console.log('Phonebook saved:', phonebookEntries.length, 'entries');
   return true;
 });
