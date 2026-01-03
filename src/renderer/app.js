@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const addEntryBtn = document.getElementById('addEntryBtn');
   const editEntryBtn = document.getElementById('editEntryBtn');
   const delEntryBtn = document.getElementById('delEntryBtn');
+  const searchInput = document.getElementById('searchInput');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
   
   // Modal elements
   const entryModal = document.getElementById('entryModal');
@@ -38,7 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     addEntryBtn: !!addEntryBtn,
     editEntryBtn: !!editEntryBtn,
     delEntryBtn: !!delEntryBtn,
-    entryModal: !!entryModal
+    entryModal: !!entryModal,
+    searchInput: !!searchInput,
+    clearSearchBtn: !!clearSearchBtn
   });
 
   // Helper function
@@ -117,6 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Phonebook state
   let phonebookEntries = [];
   let selectedEntryIndex = -1;
+  let searchTerm = '';
 
   // Phonebook functions
   async function refreshPhonebook() {
@@ -147,7 +152,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     
-    phonebookEntries.forEach((e, idx) => {
+    // Filter entries based on search term
+    const filteredEntries = phonebookEntries.map((e, idx) => ({ ...e, originalIndex: idx }))
+      .filter(e => {
+        if (!searchTerm) return true;
+        const term = searchTerm.toLowerCase();
+        return (e.name && e.name.toLowerCase().includes(term)) ||
+               (e.host && e.host.toLowerCase().includes(term)) ||
+               (e.notes && e.notes.toLowerCase().includes(term));
+      });
+    
+    if (filteredEntries.length === 0 && searchTerm) {
+      phonebookEl.innerHTML = '<p style="padding:8px; color:#888;">No matching entries found.</p>';
+      return;
+    }
+    
+    filteredEntries.forEach((e) => {
+      const idx = e.originalIndex;
       const btn = document.createElement('button');
       btn.textContent = `${e.name} (${e.host}:${e.port})`;
       if (idx === selectedEntryIndex) {
@@ -175,6 +196,49 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Load phonebook
   await refreshPhonebook();
+
+  // === SEARCH HANDLERS ===
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value.trim();
+      renderPhonebook();
+    });
+    
+    // Allow pressing Enter to select first matching entry
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && searchTerm) {
+        const filteredEntries = phonebookEntries.filter(entry => {
+          const term = searchTerm.toLowerCase();
+          return (entry.name && entry.name.toLowerCase().includes(term)) ||
+                 (entry.host && entry.host.toLowerCase().includes(term)) ||
+                 (entry.notes && entry.notes.toLowerCase().includes(term));
+        });
+        if (filteredEntries.length > 0) {
+          const originalIndex = phonebookEntries.indexOf(filteredEntries[0]);
+          selectedEntryIndex = originalIndex;
+          hostInput.value = filteredEntries[0].host;
+          portInput.value = filteredEntries[0].port;
+          renderPhonebook();
+        }
+      }
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchTerm = '';
+        renderPhonebook();
+      }
+    });
+    console.log('Search input handler attached');
+  }
+
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchTerm = '';
+      renderPhonebook();
+      searchInput.focus();
+    });
+    console.log('Clear search button handler attached');
+  }
 
   // === BUTTON EVENT HANDLERS ===
   

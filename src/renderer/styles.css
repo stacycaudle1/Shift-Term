@@ -11,6 +11,12 @@ html, body, #app { height: 100%; margin: 0; background: #0b0e12; color: #cdd8e3;
 #quickConnect button:hover { background: #35465c; }
 #quickConnect button:disabled { opacity: 0.5; cursor: not-allowed; }
 #inlineStatus { margin: 6px 0 12px; font-size: 12px; color: #9ad5e8; min-height: 1.2em; }
+#phonebookSearch { display: flex; gap: 4px; margin-bottom: 8px; }
+#phonebookSearch #searchInput { flex: 1; padding: 8px; background: #18202c; border: 1px solid #2b3a4f; color: #cdd8e3; font-size: 13px; }
+#phonebookSearch #searchInput:focus { outline: none; border-color: #7bdff2; }
+#phonebookSearch #searchInput::placeholder { color: #6a7a8a; }
+#phonebookSearch #clearSearchBtn { padding: 8px 12px; background: #243142; border: 1px solid #35465c; color: #cdd8e3; cursor: pointer; font-size: 12px; }
+#phonebookSearch #clearSearchBtn:hover { background: #2d4a5e; border-color: #7bdff2; }
 #phonebook { flex: 1; min-height: 100px; max-height: 300px; overflow-y: auto; margin-bottom: 12px; border: 1px solid #2b3a4f; background: #141a24; padding: 4px; }
 #phonebook::-webkit-scrollbar { width: 8px; }
 #phonebook::-webkit-scrollbar-track { background: #141a24; }
