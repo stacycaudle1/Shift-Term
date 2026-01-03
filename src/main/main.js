@@ -9,6 +9,11 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
+    minWidth: 900,
+    minHeight: 600,
+    resizable: true,
+    maximizable: true,
+    minimizable: true,
     title: 'Shift-Term',
     webPreferences: {
       preload: path.join(__dirname, '../preload.js'),

@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       rows: 25,
       cursorBlink: true,
       convertEol: false,
-      scrollback: 1000,
+      scrollback: 0,
       fontFamily: 'Consolas, "Courier New", monospace',
       fontSize: 16,
       letterSpacing: 0,
       lineHeight: 1.0,
       theme: {
-        background: '#0b0e12',
+        background: '#000000',
         foreground: '#cdd8e3',
         cursor: '#7bdff2',
         black: '#0f1318',
@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     console.log('Terminal initialized successfully');
     setStatus('Ready - Enter host and click Connect');
-    // Show default message in terminal on initial load
+    // Show default message in terminal on initial load - start from top
+    term.reset();
     term.clear();
-    term.write('\x1Bc');
-    term.reset && term.reset();
-    term.write('\r\nTerminal Ready.... Select A BBS from phonebook to connect.\r\n');
+    term.write('\x1B[2J\x1B[H'); // Clear screen and cursor to home (row 1, col 1)
+    term.write('Terminal Ready.... Select A BBS from phonebook to connect.\r\n');
   } catch (err) {
     console.error('Terminal init error:', err);
     setStatus('Terminal init failed: ' + err.message);
@@ -426,15 +426,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Resize handling
-  function pushResize() {
-    if (fitAddon && term) {
-      fitAddon.fit();
-      window.api.resize(term.cols, term.rows);
-    }
+  // Keep terminal fixed at 80x25 for BBS compatibility
+  // Do NOT use fitAddon.fit() as it changes rows/cols and breaks BBS screen positioning
+  function handleResize() {
+    // Terminal stays fixed at 80x25 - just notify backend of size
+    if (!term) return;
+    window.api.resize(80, 25);
+    console.log('Terminal fixed at: 80 x 25');
   }
-  window.addEventListener('resize', pushResize);
-  setTimeout(pushResize, 100);
+  window.addEventListener('resize', handleResize);
+  // Initial size notification
+  setTimeout(handleResize, 100);
 
   // CP437 to Unicode mapping for box-drawing and special characters
   const cp437ToUnicode = [
@@ -533,17 +535,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('Status update:', s);
     if (s.type === 'connected') {
       if (term) {
+        // Full terminal reset: clear buffer, reset cursor to 1,1
+        term.reset();
         term.clear();
-        term.write('\x1Bc'); // Send ANSI full reset (ESC c)
-        term.reset && term.reset(); // If xterm.js reset() is available
+        term.write('\x1B[2J\x1B[H'); // Clear screen and move cursor to home (1,1)
       }
       setStatus(`Connected to ${s.host}:${s.port}`);
     } else if (s.type === 'disconnected') {
       if (term) {
+        term.reset();
         term.clear();
-        term.write('\x1Bc');
-        term.reset && term.reset();
-        term.write('\r\nTerminal Ready.... Select A BBS from phonebook to connect.\r\n');
+        term.write('\x1B[2J\x1B[H'); // Clear screen and home cursor
+        term.write('Terminal Ready.... Select A BBS from phonebook to connect.\r\n');
       }
       setStatus('Disconnected');
     } else if (s.type === 'error') {
