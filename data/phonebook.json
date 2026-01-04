@@ -3,7 +3,8 @@
     "name": "Shift Bits BBS",
     "host": "bbs.shift-bits.com",
     "port": 2003,
-    "protocol": "telnet"
+    "protocol": "auto",
+    "notes": ""
   },
   {
     "name": "Renegade BBS",

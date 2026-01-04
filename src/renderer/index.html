@@ -55,6 +55,22 @@
       <label>Port:
         <input type="number" id="modalPort" value="23" min="1" max="65535" />
       </label>
+      <label>Protocol:
+        <select id="modalProtocol">
+          <option value="auto">Auto-detect</option>
+          <option value="telnet">Telnet</option>
+          <option value="raw">Raw TCP</option>
+          <option value="ssh">SSH</option>
+        </select>
+      </label>
+      <div id="sshCredentials" class="hidden">
+        <label>Username:
+          <input type="text" id="modalUsername" placeholder="username" />
+        </label>
+        <label>Password:
+          <input type="password" id="modalPassword" placeholder="password (optional)" />
+        </label>
+      </div>
       <label>Notes:
         <textarea id="modalNotes" placeholder="Optional notes about this BBS..." rows="3"></textarea>
       </label>

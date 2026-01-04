@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const net = require('net');
+const { Client: SSHClient } = require('ssh2');
 
 let mainWindow;
 
@@ -66,6 +67,7 @@ class TelnetClient {
     this.rows = 25;
     this.logging = false;
     this.logStream = null;
+    this.protocol = 'telnet';
   }
 
   connect(host, port) {
@@ -75,7 +77,7 @@ class TelnetClient {
 
     this.socket.on('connect', () => {
       const win = this.getWin();
-      if (win) win.webContents.send('term:status', { type: 'connected', host, port });
+      if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'telnet' });
       // Immediately advertise WILL NAWS/TTYPE when server sends DOs
     });
 
@@ -243,26 +245,355 @@ class TelnetClient {
   }
 }
 
-const telnet = new TelnetClient(() => mainWindow);
+// Raw TCP client - no Telnet negotiation
+class RawClient {
+  constructor(getWin) {
+    this.getWin = getWin;
+    this.socket = null;
+    this.logging = false;
+    this.logStream = null;
+    this.protocol = 'raw';
+  }
 
-ipcMain.handle('connect', async (_e, { host, port }) => {
-  telnet.connect(host, port);
+  connect(host, port) {
+    if (this.socket) this.disconnect();
+    this.socket = new net.Socket();
+    this.socket.setKeepAlive(true, 15000);
+
+    this.socket.on('connect', () => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'raw' });
+    });
+
+    this.socket.on('data', (data) => {
+      const str = data.toString('binary');
+      const win = this.getWin();
+      if (win) win.webContents.send('term:data', str);
+      if (this.logging && this.logStream) this.logStream.write(data);
+    });
+
+    this.socket.on('error', (err) => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'error', message: err.message });
+    });
+
+    this.socket.on('close', () => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'disconnected' });
+      if (this.logStream) { this.logStream.end(); this.logStream = null; }
+    });
+
+    this.socket.connect(port, host);
+  }
+
+  disconnect() {
+    try { if (this.socket) this.socket.destroy(); } catch {}
+    this.socket = null;
+  }
+
+  setSize(cols, rows) {
+    // Raw TCP doesn't support window size negotiation
+  }
+
+  setLogging(enabled) {
+    this.logging = enabled;
+    if (enabled && !this.logStream) {
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const logPath = path.join(process.cwd(), 'logs', `session-${stamp}.bin`);
+      fs.mkdirSync(path.dirname(logPath), { recursive: true });
+      this.logStream = fs.createWriteStream(logPath);
+    } else if (!enabled && this.logStream) {
+      this.logStream.end();
+      this.logStream = null;
+    }
+  }
+
+  write(data) {
+    if (!this.socket) return;
+    const buf = Buffer.from(data, 'binary');
+    this.socket.write(buf);
+  }
+}
+
+// SSH Client using ssh2 library
+class SSHTerminalClient {
+  constructor(getWin) {
+    this.getWin = getWin;
+    this.client = null;
+    this.stream = null;
+    this.columns = 80;
+    this.rows = 25;
+    this.logging = false;
+    this.logStream = null;
+    this.protocol = 'ssh';
+  }
+
+  connect(host, port, credentials = {}) {
+    if (this.client) this.disconnect();
+    
+    this.client = new SSHClient();
+    const { username = '', password = '', privateKey = null } = credentials;
+
+    this.client.on('ready', () => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'ssh' });
+      
+      this.client.shell({ term: 'xterm-256color', cols: this.columns, rows: this.rows }, (err, stream) => {
+        if (err) {
+          if (win) win.webContents.send('term:status', { type: 'error', message: err.message });
+          return;
+        }
+        
+        this.stream = stream;
+        
+        stream.on('data', (data) => {
+          const str = data.toString('binary');
+          const win = this.getWin();
+          if (win) win.webContents.send('term:data', str);
+          if (this.logging && this.logStream) this.logStream.write(data);
+        });
+        
+        stream.on('close', () => {
+          const win = this.getWin();
+          if (win) win.webContents.send('term:status', { type: 'disconnected' });
+          this.disconnect();
+        });
+      });
+    });
+
+    this.client.on('error', (err) => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'error', message: err.message });
+    });
+
+    this.client.on('close', () => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'disconnected' });
+      if (this.logStream) { this.logStream.end(); this.logStream = null; }
+    });
+
+    // Build connection config
+    const config = {
+      host,
+      port,
+      username: username || 'guest',
+      readyTimeout: 20000,
+      keepaliveInterval: 15000
+    };
+
+    if (privateKey) {
+      config.privateKey = privateKey;
+    } else if (password) {
+      config.password = password;
+    } else {
+      // Try keyboard-interactive for BBSes that prompt for login
+      config.tryKeyboard = true;
+    }
+
+    this.client.connect(config);
+  }
+
+  disconnect() {
+    try { 
+      if (this.stream) this.stream.end();
+      if (this.client) this.client.end();
+    } catch {}
+    this.stream = null;
+    this.client = null;
+  }
+
+  setSize(cols, rows) {
+    this.columns = cols;
+    this.rows = rows;
+    if (this.stream) {
+      this.stream.setWindow(rows, cols, 0, 0);
+    }
+  }
+
+  setLogging(enabled) {
+    this.logging = enabled;
+    if (enabled && !this.logStream) {
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const logPath = path.join(process.cwd(), 'logs', `session-${stamp}.bin`);
+      fs.mkdirSync(path.dirname(logPath), { recursive: true });
+      this.logStream = fs.createWriteStream(logPath);
+    } else if (!enabled && this.logStream) {
+      this.logStream.end();
+      this.logStream = null;
+    }
+  }
+
+  write(data) {
+    if (!this.stream) return;
+    this.stream.write(data);
+  }
+}
+
+// Auto-detecting client - tries to detect Telnet vs Raw
+class AutoDetectClient {
+  constructor(getWin) {
+    this.getWin = getWin;
+    this.actualClient = null;
+    this.socket = null;
+    this.pendingData = [];
+    this.detected = false;
+    this.host = null;
+    this.port = null;
+    this.logging = false;
+  }
+
+  connect(host, port) {
+    this.host = host;
+    this.port = port;
+    this.detected = false;
+    this.pendingData = [];
+    
+    if (this.socket) this.disconnect();
+    this.socket = new net.Socket();
+    this.socket.setKeepAlive(true, 15000);
+    this.socket.setTimeout(3000); // 3 second timeout for detection
+
+    this.socket.on('connect', () => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'detecting', host, port });
+    });
+
+    this.socket.on('data', (data) => {
+      if (!this.detected) {
+        // Check for Telnet IAC commands (0xFF followed by negotiation)
+        const hasTelnet = this._containsTelnetCommands(data);
+        this._finalizeDetection(hasTelnet ? 'telnet' : 'raw', data);
+      }
+    });
+
+    this.socket.on('timeout', () => {
+      if (!this.detected) {
+        // No data received - assume raw connection
+        this._finalizeDetection('raw', null);
+      }
+    });
+
+    this.socket.on('error', (err) => {
+      const win = this.getWin();
+      if (win) win.webContents.send('term:status', { type: 'error', message: err.message });
+    });
+
+    this.socket.on('close', () => {
+      if (!this.detected) {
+        const win = this.getWin();
+        if (win) win.webContents.send('term:status', { type: 'disconnected' });
+      }
+    });
+
+    this.socket.connect(port, host);
+  }
+
+  _containsTelnetCommands(data) {
+    const IAC = 255;
+    for (let i = 0; i < data.length - 1; i++) {
+      if (data[i] === IAC) {
+        const cmd = data[i + 1];
+        // Check for DO, DONT, WILL, WONT, SB (common Telnet commands)
+        if (cmd >= 250 && cmd <= 254) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  _finalizeDetection(protocol, initialData) {
+    this.detected = true;
+    this.socket.setTimeout(0); // Clear timeout
+    
+    const win = this.getWin();
+    if (win) win.webContents.send('term:status', { type: 'detected', protocol, host: this.host, port: this.port });
+
+    // Destroy the detection socket
+    const oldSocket = this.socket;
+    this.socket = null;
+    try { oldSocket.destroy(); } catch {}
+
+    // Create the appropriate client and reconnect
+    if (protocol === 'telnet') {
+      this.actualClient = new TelnetClient(this.getWin);
+    } else {
+      this.actualClient = new RawClient(this.getWin);
+    }
+    
+    if (this.logging) {
+      this.actualClient.setLogging(true);
+    }
+    
+    this.actualClient.connect(this.host, this.port);
+  }
+
+  disconnect() {
+    try { if (this.socket) this.socket.destroy(); } catch {}
+    this.socket = null;
+    if (this.actualClient) {
+      this.actualClient.disconnect();
+      this.actualClient = null;
+    }
+  }
+
+  setSize(cols, rows) {
+    if (this.actualClient) this.actualClient.setSize(cols, rows);
+  }
+
+  setLogging(enabled) {
+    this.logging = enabled;
+    if (this.actualClient) this.actualClient.setLogging(enabled);
+  }
+
+  write(data) {
+    if (this.actualClient) this.actualClient.write(data);
+  }
+}
+
+// Connection manager
+let activeClient = null;
+const getWindow = () => mainWindow;
+
+function createClient(protocol) {
+  switch (protocol) {
+    case 'ssh':
+      return new SSHTerminalClient(getWindow);
+    case 'raw':
+      return new RawClient(getWindow);
+    case 'telnet':
+      return new TelnetClient(getWindow);
+    case 'auto':
+    default:
+      return new AutoDetectClient(getWindow);
+  }
+}
+
+ipcMain.handle('connect', async (_e, { host, port, protocol = 'auto', credentials = {} }) => {
+  if (activeClient) activeClient.disconnect();
+  activeClient = createClient(protocol);
+  
+  if (protocol === 'ssh') {
+    activeClient.connect(host, port, credentials);
+  } else {
+    activeClient.connect(host, port);
+  }
 });
 
 ipcMain.handle('disconnect', async () => {
-  telnet.disconnect();
+  if (activeClient) activeClient.disconnect();
 });
 
 ipcMain.handle('write', async (_e, data) => {
-  telnet.write(data);
+  if (activeClient) activeClient.write(data);
 });
 
 ipcMain.handle('resize', async (_e, { cols, rows }) => {
-  telnet.setSize(cols, rows);
+  if (activeClient) activeClient.setSize(cols, rows);
 });
 
 ipcMain.handle('setLogging', async (_e, enabled) => {
-  telnet.setLogging(enabled);
+  if (activeClient) activeClient.setLogging(enabled);
 });
 
 ipcMain.handle('readPhonebook', async () => {

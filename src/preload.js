@@ -1,7 +1,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-  connect: (host, port) => ipcRenderer.invoke('connect', { host, port }),
+  connect: (host, port, protocol, credentials) => ipcRenderer.invoke('connect', { host, port, protocol, credentials }),
   disconnect: () => ipcRenderer.invoke('disconnect'),
   write: (data) => ipcRenderer.invoke('write', data),
   resize: (cols, rows) => ipcRenderer.invoke('resize', { cols, rows }),

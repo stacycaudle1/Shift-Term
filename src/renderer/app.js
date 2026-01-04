@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const modalName = document.getElementById('modalName');
   const modalHost = document.getElementById('modalHost');
   const modalPort = document.getElementById('modalPort');
+  const modalProtocol = document.getElementById('modalProtocol');
+  const modalUsername = document.getElementById('modalUsername');
+  const modalPassword = document.getElementById('modalPassword');
+  const sshCredentials = document.getElementById('sshCredentials');
   const modalNotes = document.getElementById('modalNotes');
   const modalCancel = document.getElementById('modalCancel');
   const modalSave = document.getElementById('modalSave');
@@ -42,7 +46,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     delEntryBtn: !!delEntryBtn,
     entryModal: !!entryModal,
     searchInput: !!searchInput,
-    clearSearchBtn: !!clearSearchBtn
+    clearSearchBtn: !!clearSearchBtn,
+    modalProtocol: !!modalProtocol,
+    sshCredentials: !!sshCredentials
   });
 
   // Helper function
@@ -121,6 +127,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Phonebook state
   let phonebookEntries = [];
   let selectedEntryIndex = -1;
+  let selectedEntryProtocol = 'auto';
+  let selectedEntryCredentials = {};
   let searchTerm = '';
 
   // Phonebook functions
@@ -179,6 +187,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       btn.onclick = () => {
         console.log('Phonebook entry clicked:', e.name);
         selectedEntryIndex = idx;
+        selectedEntryProtocol = e.protocol || 'auto';
+        selectedEntryCredentials = { username: e.username, password: e.password };
         renderPhonebook();
         hostInput.value = e.host;
         portInput.value = e.port;
@@ -186,8 +196,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       btn.ondblclick = async () => {
         console.log('Phonebook entry double-clicked:', e.name);
-        setStatus('Connecting...');
-        await window.api.connect(e.host, e.port || 23);
+        const protocol = e.protocol || 'auto';
+        const credentials = { username: e.username, password: e.password };
+        setStatus(`Connecting (${protocol})...`);
+        await window.api.connect(e.host, e.port || 23, protocol, credentials);
       };
       
       phonebookEl.appendChild(btn);
@@ -248,7 +260,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.log('>>> Connect button clicked!');
       const host = hostInput.value.trim();
       const port = parseInt(portInput.value, 10) || 23;
-      console.log('Connecting to:', host, port);
+      const protocol = selectedEntryProtocol || 'auto';
+      const credentials = selectedEntryCredentials || {};
+      console.log('Connecting to:', host, port, 'protocol:', protocol);
       
       if (!host) {
         setStatus('Enter a host to connect');
@@ -256,11 +270,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
       
-      setStatus(`Connecting to ${host}:${port}...`);
+      setStatus(`Connecting to ${host}:${port} (${protocol})...`);
       connectBtn.disabled = true;
       
       try {
-        await window.api.connect(host, port);
+        await window.api.connect(host, port, protocol, credentials);
         console.log('Connect API called successfully');
       } catch (error) {
         console.error('Connect error:', error);
@@ -276,6 +290,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   let modalMode = 'add'; // 'add' or 'edit'
   let editingIndex = -1;
   
+  function updateSSHCredentialsVisibility() {
+    if (modalProtocol && sshCredentials) {
+      if (modalProtocol.value === 'ssh') {
+        sshCredentials.classList.remove('hidden');
+      } else {
+        sshCredentials.classList.add('hidden');
+      }
+    }
+  }
+  
+  // Add protocol change listener
+  if (modalProtocol) {
+    modalProtocol.addEventListener('change', updateSSHCredentialsVisibility);
+  }
+  
   function showModal(mode, entry = null) {
     modalMode = mode;
     if (mode === 'add') {
@@ -283,14 +312,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       modalName.value = '';
       modalHost.value = hostInput.value || '';
       modalPort.value = portInput.value || '23';
+      if (modalProtocol) modalProtocol.value = 'auto';
+      if (modalUsername) modalUsername.value = '';
+      if (modalPassword) modalPassword.value = '';
       modalNotes.value = '';
     } else {
       modalTitle.textContent = 'Edit BBS Entry';
       modalName.value = entry.name || '';
       modalHost.value = entry.host || '';
       modalPort.value = entry.port || 23;
+      if (modalProtocol) modalProtocol.value = entry.protocol || 'auto';
+      if (modalUsername) modalUsername.value = entry.username || '';
+      if (modalPassword) modalPassword.value = entry.password || '';
       modalNotes.value = entry.notes || '';
     }
+    updateSSHCredentialsVisibility();
     entryModal.classList.remove('hidden');
     modalName.focus();
   }
@@ -308,6 +344,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const name = modalName.value.trim();
     const host = modalHost.value.trim();
     const port = parseInt(modalPort.value) || 23;
+    const protocol = modalProtocol ? modalProtocol.value : 'auto';
+    const username = modalUsername ? modalUsername.value.trim() : '';
+    const password = modalPassword ? modalPassword.value : '';
     const notes = modalNotes.value.trim();
     
     if (!name || !host) {
@@ -315,7 +354,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     
-    const entry = { name, host, port, protocol: 'telnet', notes };
+    const entry = { name, host, port, protocol, notes };
+    
+    // Only store credentials if SSH is selected and values provided
+    if (protocol === 'ssh') {
+      if (username) entry.username = username;
+      if (password) entry.password = password;
+    }
     
     try {
       if (modalMode === 'add') {
@@ -604,7 +649,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         term.clear();
         term.write('\x1B[2J\x1B[H'); // Clear screen and move cursor to home (1,1)
       }
-      setStatus(`Connected to ${s.host}:${s.port}`);
+      const protocolLabel = s.protocol ? ` (${s.protocol.toUpperCase()})` : '';
+      setStatus(`Connected to ${s.host}:${s.port}${protocolLabel}`);
+    } else if (s.type === 'detecting') {
+      setStatus(`Detecting protocol for ${s.host}:${s.port}...`);
+    } else if (s.type === 'detected') {
+      setStatus(`Detected ${s.protocol.toUpperCase()} - reconnecting...`);
     } else if (s.type === 'disconnected') {
       if (term) {
         term.reset();
