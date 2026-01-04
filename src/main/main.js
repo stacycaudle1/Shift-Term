@@ -74,14 +74,36 @@ class TelnetClient {
     if (this.socket) this.disconnect();
     this.socket = new net.Socket();
     this.socket.setKeepAlive(true, 15000);
+    
+    // Buffer initial data until status is sent
+    let initialBuffer = [];
+    let statusSent = false;
 
     this.socket.on('connect', () => {
       const win = this.getWin();
       if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'telnet' });
-      // Immediately advertise WILL NAWS/TTYPE when server sends DOs
+      // Small delay to allow terminal to clear before processing buffered data
+      setTimeout(() => {
+        statusSent = true;
+        if (initialBuffer.length > 0) {
+          for (const data of initialBuffer) {
+            const rendered = this._processTelnet(data);
+            if (rendered && rendered.length) {
+              const str = rendered.toString('binary');
+              if (win) win.webContents.send('term:data', str);
+              if (this.logging && this.logStream) this.logStream.write(rendered);
+            }
+          }
+          initialBuffer = [];
+        }
+      }, 50);
     });
 
     this.socket.on('data', (data) => {
+      if (!statusSent) {
+        initialBuffer.push(data);
+        return;
+      }
       const rendered = this._processTelnet(data);
       if (rendered && rendered.length) {
         const str = rendered.toString('binary');
@@ -259,13 +281,33 @@ class RawClient {
     if (this.socket) this.disconnect();
     this.socket = new net.Socket();
     this.socket.setKeepAlive(true, 15000);
+    
+    // Buffer initial data until status is sent
+    let initialBuffer = [];
+    let statusSent = false;
 
     this.socket.on('connect', () => {
       const win = this.getWin();
       if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'raw' });
+      // Small delay to allow terminal to clear before processing buffered data
+      setTimeout(() => {
+        statusSent = true;
+        if (initialBuffer.length > 0) {
+          for (const data of initialBuffer) {
+            const str = data.toString('binary');
+            if (win) win.webContents.send('term:data', str);
+            if (this.logging && this.logStream) this.logStream.write(data);
+          }
+          initialBuffer = [];
+        }
+      }, 50);
     });
 
     this.socket.on('data', (data) => {
+      if (!statusSent) {
+        initialBuffer.push(data);
+        return;
+      }
       const str = data.toString('binary');
       const win = this.getWin();
       if (win) win.webContents.send('term:data', str);

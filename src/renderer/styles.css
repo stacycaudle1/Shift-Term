@@ -52,20 +52,15 @@ html, body, #app { height: 100%; margin: 0; background: #0b0e12; color: #cdd8e3;
 #modalCancel:hover { background: #2d4a5e; }
 #modalSave { background: #2b5278; border: 1px solid #7bdff2; color: #fff; }
 #modalSave:hover { background: #3a6a9a; }
-#terminalPane { position: relative; overflow: hidden; display: flex; align-items: flex-start; justify-content: flex-start; padding: 8px; background: #000000; height: 100%; min-height: 0; }
+#terminalPane { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0; background: #000000; height: 100%; min-height: 0; }
 #terminal {
 	flex: 0 0 auto;
-	width: auto;
-	height: auto;
 	padding: 0;
+	margin: 0;
 	background: #000000;
-	border: none;
-	border-radius: 0;
-	box-shadow: none;
-	display: block;
 	overflow: hidden;
 }
-#terminal .xterm { width: auto !important; height: auto !important; background: #000000 !important; }
+#terminal .xterm { background: #000000 !important; }
 #terminal .xterm-viewport { overflow-y: hidden !important; background: #000000 !important; }
 #terminal .xterm-screen { background: #000000 !important; }
 #terminalPane, #terminal, #terminal .xterm, #terminal .xterm-viewport, #terminal .xterm-screen { background: #000000 !important; }

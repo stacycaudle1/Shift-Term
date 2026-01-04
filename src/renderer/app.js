@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       cursorBlink: true,
       convertEol: false,
       scrollback: 0,
-      fontFamily: 'Consolas, "Courier New", monospace',
+      fontFamily: 'ShiftTermCP437, Consolas, "Courier New", monospace',
       fontSize: 16,
       letterSpacing: 0,
       lineHeight: 1.0,
@@ -109,10 +109,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     term.loadAddon(fitAddon);
     term.open(terminalEl);
     
-    // Terminal is fixed at 80x25 - no auto-fit
-    console.log('Terminal sized to:', term.cols, 'x', term.rows);
+    // Fixed 80x25 terminal - no dynamic fitting
+    // Send size to server for NAWS
+    window.api.resize({ cols: 80, rows: 25 });
     
-    console.log('Terminal initialized successfully');
+    console.log('Terminal initialized at fixed 80x25');
     setStatus('Ready - Enter host and click Connect');
     // Show default message in terminal on initial load - start from top
     term.reset();
@@ -644,9 +645,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('Status update:', s);
     if (s.type === 'connected') {
       if (term) {
-        // Full terminal reset: clear buffer, reset cursor to 1,1
+        // Send fixed terminal size to server
+        window.api.resize({ cols: 80, rows: 25 });
+        // Full terminal reset and switch to alternate screen buffer
         term.reset();
         term.clear();
+        // Enable alternate screen buffer (used by full-screen apps like BBS)
+        term.write('\x1B[?1049h'); // Enable alternate screen buffer
         term.write('\x1B[2J\x1B[H'); // Clear screen and move cursor to home (1,1)
       }
       const protocolLabel = s.protocol ? ` (${s.protocol.toUpperCase()})` : '';
@@ -657,6 +662,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       setStatus(`Detected ${s.protocol.toUpperCase()} - reconnecting...`);
     } else if (s.type === 'disconnected') {
       if (term) {
+        // Disable alternate screen buffer and reset
+        term.write('\x1B[?1049l'); // Disable alternate screen buffer
         term.reset();
         term.clear();
         term.write('\x1B[2J\x1B[H'); // Clear screen and home cursor
