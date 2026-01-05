@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const terminalEl = document.getElementById('terminal');
   const statusEl = document.getElementById('status');
   const inlineStatusEl = document.getElementById('inlineStatus');
+  const importInfoEl = document.getElementById('importInfo');
   const phonebookEl = document.getElementById('phonebook');
   const disconnectBtn = document.getElementById('disconnectBtn');
   const loggingChk = document.getElementById('loggingChk');
@@ -58,7 +59,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (inlineStatusEl) inlineStatusEl.textContent = text;
   }
 
-  setStatus('Initializing...');
+  function setImportInfo(text) {
+    if (importInfoEl) importInfoEl.textContent = text;
+  }
+
+  // Show last import date if available
+  const lastImportDate = localStorage.getItem('bbsLastImportDate');
+  if (lastImportDate) {
+    // Try to get current number of entries
+    const phonebook = await window.api.readPhonebook();
+    setStatus('Ready - Enter host and click Connect');
+    setImportInfo(`Imported ${phonebook.length} BBS entries. Last Import date: ${lastImportDate}`);
+  } else {
+    setStatus('Initializing...');
+    setImportInfo('');
+  }
 
   // Initialize terminal
   let term = null;
@@ -492,13 +507,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             setStatus('No valid BBS entries found in file');
             return;
           }
-          // Keep top 3 phonebook entries, add imported below
-          const top3 = phonebookEntries.slice(0, 3);
-          phonebookEntries = [...top3, ...imported];
-          // Save all imported entries (replace all except top 3)
-          await window.api.savePhonebookEntry({ action: 'replaceAll', entries: phonebookEntries });
+          // Find Shift-Bits BBS and keep it at the top
+          let shiftBitsEntry = phonebookEntries.find(e => e.host && e.host.toLowerCase().includes('shift-bits'));
+          // Build new phonebook, preserving notes for matching BBSs
+          const mergedImported = imported.map(newEntry => {
+            // Try to find old entry with same host and port
+            const oldEntry = phonebookEntries.find(e => e.host === newEntry.host && e.port === newEntry.port);
+            return oldEntry ? { ...newEntry, notes: oldEntry.notes } : newEntry;
+          });
+          // Remove Shift-Bits from imported if present
+          const filteredImported = mergedImported.filter(e => !(e.host && e.host.toLowerCase().includes('shift-bits')));
+          // Compose new phonebook: Shift-Bits at top, then imported
+          const newPhonebook = shiftBitsEntry ? [shiftBitsEntry, ...filteredImported] : filteredImported;
+          await window.api.savePhonebookEntry({ action: 'replaceAll', entries: newPhonebook });
+          // Store last import date in localStorage
+          const importDate = new Date().toLocaleString();
+          localStorage.setItem('bbsLastImportDate', importDate);
           await refreshPhonebook();
-          setStatus(`Imported ${imported.length} BBS entries`);
+          setStatus('Ready - Enter host and click Connect');
+          setImportInfo(`Imported ${filteredImported.length} BBS entries. Last Import date: ${importDate}`);
         } catch (err) {
           console.error('Import error:', err);
           setStatus('Import failed: ' + err.message);

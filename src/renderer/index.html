@@ -16,6 +16,8 @@
         <input id="hostInput" type="text" placeholder="Host (e.g. bbs.example.com)" />
         <input id="portInput" type="number" min="1" max="65535" placeholder="Port" />
         <button id="connectBtn">Connect</button>
+        <div id="status" style="margin-top:8px; color:#aef; font-size:1em;"></div>
+        <div id="importInfo" style="margin-top:2px; color:#aef; font-size:1em;"></div>
       </section>
       <div id="inlineStatus" aria-live="polite"></div>
       <h2>BBS Phonebook</h2>
@@ -28,7 +30,7 @@
         <button id="addEntryBtn">Add</button>
         <button id="editEntryBtn">Edit</button>
         <button id="delEntryBtn">Delete</button>
-        <button id="importEntryBtn">Import</button>
+        <button id="importEntryBtn" title="Download Short BBS list from Telenet BBS Guide website.">Import</button>
         <input type="file" id="importFileInput" accept=".txt" style="display:none" />
       </div>
       <div class="controls">

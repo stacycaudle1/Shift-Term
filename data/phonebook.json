@@ -7,18 +7,6 @@
     "notes": ""
   },
   {
-    "name": "Renegade BBS",
-    "host": "ttb.rgbbs.info",
-    "port": 23,
-    "protocol": "telnet"
-  },
-  {
-    "name": "Vert",
-    "host": "vert.synchro.net",
-    "port": 23,
-    "protocol": "telnet"
-  },
-  {
     "name": "0Day BBS",
     "host": "65.108.245.243",
     "port": 8888,
@@ -5353,13 +5341,6 @@
     "notes": ""
   },
   {
-    "name": "Shift-Bits BBS",
-    "host": "bbs.shift-bits.com",
-    "port": 2000,
-    "protocol": "telnet",
-    "notes": ""
-  },
-  {
     "name": "Shipwrecks & Shibboleths",
     "host": "shibboleths.org",
     "port": 800,
@@ -6014,8 +5995,7 @@
     "name": "Titantic BBS Telnet, The",
     "host": "ttb.rgbbs.info",
     "port": 23,
-    "protocol": "telnet",
-    "notes": ""
+    "protocol": "telnet"
   },
   {
     "name": "Tomato Place",
@@ -6322,8 +6302,7 @@
     "name": "Vertrauen",
     "host": "vert.synchro.net",
     "port": 23,
-    "protocol": "telnet",
-    "notes": ""
+    "protocol": "telnet"
   },
   {
     "name": "Video Game Nirvana",
