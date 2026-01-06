@@ -20,18 +20,53 @@
         <div id="importInfo" style="margin-top:2px; color:#aef; font-size:1em;"></div>
       </section>
       <div id="inlineStatus" aria-live="polite"></div>
-      <h2>BBS Phonebook</h2>
-      <div id="phonebookSearch">
-        <input id="searchInput" type="text" placeholder="Search phonebook..." />
-        <button id="clearSearchBtn" title="Clear search">✕</button>
+      <!-- Phonebook Section (visible when disconnected) -->
+      <div id="phonebookSection">
+        <h2>BBS Phonebook</h2>
+        <div id="phonebookSearch">
+          <input id="searchInput" type="text" placeholder="Search phonebook..." />
+          <button id="clearSearchBtn" title="Clear search">✕</button>
+        </div>
+        <div id="phonebook"></div>
+        <div class="edit-controls">
+          <button id="addEntryBtn">Add</button>
+          <button id="editEntryBtn">Edit</button>
+          <button id="delEntryBtn">Delete</button>
+          <button id="importEntryBtn" title="Download Short BBS list from Telenet BBS Guide website.">Import</button>
+          <input type="file" id="importFileInput" accept=".txt" style="display:none" />
+        </div>
       </div>
-      <div id="phonebook"></div>
-      <div class="edit-controls">
-        <button id="addEntryBtn">Add</button>
-        <button id="editEntryBtn">Edit</button>
-        <button id="delEntryBtn">Delete</button>
-        <button id="importEntryBtn" title="Download Short BBS list from Telenet BBS Guide website.">Import</button>
-        <input type="file" id="importFileInput" accept=".txt" style="display:none" />
+      
+      <!-- File Transfer Section (visible when connected) -->
+      <div id="fileTransferSection" class="hidden">
+        <h2>File Transfer</h2>
+        <div id="connectionInfo"></div>
+        <div class="transfer-controls">
+          <div class="protocol-select">
+            <label>Protocol:
+              <select id="transferProtocol">
+                <option value="zmodem">ZMODEM</option>
+              </select>
+            </label>
+          </div>
+          <div class="transfer-buttons">
+            <button id="uploadBtn" title="Queue a file, then start ZMODEM receive from BBS">
+              <span class="btn-icon">⬆</span> Upload File
+            </button>
+            <button id="downloadBtn" title="Start ZMODEM send from BBS - files auto-downloaded">
+              <span class="btn-icon">⬇</span> Download File
+            </button>
+          </div>
+          <input type="file" id="uploadFileInput" style="display:none" />
+          <div id="transferStatus"></div>
+          <div id="transferProgress" class="hidden">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div id="progressText">0%</div>
+            <button id="cancelTransferBtn">Cancel</button>
+          </div>
+        </div>
       </div>
       <div class="controls">
         <button id="disconnectBtn">Disconnect</button>
@@ -61,7 +96,6 @@
         <select id="modalProtocol">
           <option value="auto">Auto-detect</option>
           <option value="telnet">Telnet</option>
-          <option value="raw">Raw TCP</option>
           <option value="ssh">SSH</option>
         </select>
       </label>

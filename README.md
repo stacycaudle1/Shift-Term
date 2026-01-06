@@ -166,7 +166,7 @@ Shift-Term/
 This project welcomes contributions from developers of all experience levels! Whether you're a seasoned programmer familiar with vintage computing or a newcomer interested in learning about BBS culture, there's a place for your contributions.
 
 ### Areas for Contribution
-- **Protocol Support**: SSH, Rlogin, raw TCP connections
+- **Protocol Support**: SSH, Rlogin connections
 - **File Transfers**: ZMODEM, XMODEM, YMODEM protocols
 - **UI Enhancements**: Themes, font options, layout improvements
 - **Documentation**: Tutorials, API docs, usage guides

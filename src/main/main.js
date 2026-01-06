@@ -1,10 +1,278 @@
-const { app, BrowserWindow, ipcMain, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const net = require('net');
 const { Client: SSHClient } = require('ssh2');
+const Zmodem = require('zmodem.js');
 
 let mainWindow;
+
+// === ZMODEM Transfer State ===
+let zmodemSession = null;
+let zmodemSentry = null;
+let pendingUpload = null; // { name, data } for user-initiated uploads
+
+// Helper to send transfer progress to renderer
+function sendTransferProgress(percent, status, details = {}) {
+  if (mainWindow) {
+    mainWindow.webContents.send('transfer:progress', { percent, status, ...details });
+  }
+}
+
+// Helper to send ZMODEM detection status
+function sendZmodemDetected(type) {
+  if (mainWindow) {
+    mainWindow.webContents.send('zmodem:detected', { type });
+  }
+}
+
+// Helper to send debug messages to DevTools console
+function debugLog(...args) {
+  console.log('[MAIN]', ...args);
+  if (mainWindow) {
+    mainWindow.webContents.send('debug:log', args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' '));
+  }
+}
+
+// Create downloads directory if needed
+function getDownloadsDir() {
+  const dir = path.join(process.cwd(), 'downloads');
+  fs.mkdirSync(dir, { recursive: true });
+  return dir;
+}
+
+// Handle ZMODEM session when detected
+async function handleZmodemSession(zsession, client) {
+  try {
+    debugLog('handleZmodemSession called, type:', zsession.type, 'pendingUpload:', pendingUpload ? pendingUpload.name : 'null');
+    zmodemSession = zsession;
+    
+    // Register session_end handler for both session types
+    zsession.on('session_end', () => {
+      debugLog('ZMODEM session ended');
+      zmodemSession = null;
+      sendTransferProgress(100, 'Transfer complete', { complete: true });
+    });
+    
+    // Check if this is a send session (BBS wants to receive from us)
+    if (zsession.type === 'send') {
+      debugLog('This is a SEND session - BBS wants to receive a file');
+      sendZmodemDetected('send');
+      
+      if (pendingUpload) {
+        debugLog('We have a pending upload:', pendingUpload.name, 'size:', pendingUpload.data.length);
+        // We have a file queued for upload
+        const { name, data } = pendingUpload;
+        pendingUpload = null;
+        
+        sendTransferProgress(0, `Uploading: ${name}`, { filename: name, direction: 'upload' });
+        
+        // Start upload asynchronously
+        (async () => {
+          try {
+            const fileData = new Uint8Array(data);
+            const xferOffer = {
+              name: name,
+              size: fileData.length,
+              mtime: new Date(),
+              files_remaining: 1,
+              bytes_remaining: fileData.length
+            };
+            
+            debugLog('Sending offer:', JSON.stringify(xferOffer));
+            const xfer = await zsession.send_offer(xferOffer);
+            debugLog('Offer result:', xfer ? 'accepted' : 'rejected/null');
+            
+            if (xfer) {
+              // Send file in chunks
+              const CHUNK_SIZE = 8192;
+              let offset = 0;
+              
+              debugLog('Starting to send file data, size:', fileData.length);
+              while (offset < fileData.length) {
+                const chunk = fileData.slice(offset, offset + CHUNK_SIZE);
+                await xfer.send(chunk);
+                offset += chunk.length;
+                const percent = Math.round((offset / fileData.length) * 100);
+                sendTransferProgress(percent, `Uploading: ${name}`, { filename: name, sent: offset, size: fileData.length, direction: 'upload' });
+              }
+              
+              debugLog('All data sent, calling xfer.end()');
+              await xfer.end();
+              sendTransferProgress(100, `Uploaded: ${name}`, { filename: name, direction: 'upload', complete: true });
+              debugLog('ZMODEM upload complete:', name);
+            } else {
+              debugLog('Offer was rejected (xfer is null/undefined)');
+              sendTransferProgress(0, 'Upload rejected by receiver', { direction: 'upload', error: 'rejected' });
+            }
+            
+            debugLog('Closing session');
+            await zsession.close();
+          } catch (err) {
+            const errMsg = typeof err === 'string' ? err : (err && err.message ? err.message : String(err));
+            debugLog('ZMODEM upload error:', errMsg);
+            sendTransferProgress(0, `Upload failed: ${errMsg}`, { error: errMsg, direction: 'upload' });
+            try { zsession.abort(); } catch (e) { debugLog('Abort error:', e.message || e); }
+          }
+        })();
+        
+        return; // Don't call zsession.start() for send sessions we're managing
+      } else {
+        // No file queued - notify user to select a file
+        debugLog('No pending upload - waiting for user to select file');
+        sendTransferProgress(0, 'BBS ready to receive - select a file to upload', { direction: 'upload', waiting: true });
+        return;
+      }
+    }
+    
+    // This is a RECEIVE session (BBS is sending files to us)
+    debugLog('This is a RECEIVE session - BBS wants to send us a file');
+    sendZmodemDetected('receive');
+    
+    // Register offer handler only for receive sessions
+    zsession.on('offer', async (xfer) => {
+      const filename = xfer.get_details().name;
+      const size = xfer.get_details().size;
+      debugLog('Received file offer:', filename, 'size:', size);
+      
+      sendTransferProgress(0, `Receiving: ${filename}`, { filename, size, direction: 'download' });
+      
+      const chunks = [];
+      
+      xfer.on('input', (payload) => {
+        chunks.push(new Uint8Array(payload));
+        const received = chunks.reduce((a, c) => a + c.length, 0);
+        const percent = size ? Math.round((received / size) * 100) : 0;
+        sendTransferProgress(percent, `Receiving: ${filename}`, { filename, received, size, direction: 'download' });
+      });
+      
+      xfer.accept().then(() => {
+        // Save the file
+        const fullData = new Uint8Array(chunks.reduce((a, c) => a + c.length, 0));
+        let offset = 0;
+        for (const chunk of chunks) {
+          fullData.set(chunk, offset);
+          offset += chunk.length;
+        }
+        
+        const savePath = path.join(getDownloadsDir(), filename);
+        fs.writeFileSync(savePath, Buffer.from(fullData));
+        
+        sendTransferProgress(100, `Downloaded: ${filename}`, { filename, path: savePath, direction: 'download', complete: true });
+        debugLog('ZMODEM download complete:', savePath);
+      }).catch((err) => {
+        sendTransferProgress(0, `Download failed: ${err.message}`, { error: err.message, direction: 'download' });
+        debugLog('ZMODEM download error:', err.message || err);
+      });
+    });
+    
+    // For receive sessions, start automatically
+    debugLog('Starting receive session');
+    zsession.start();
+  } catch (err) {
+    debugLog('handleZmodemSession error:', err.message || err, err.stack);
+  }
+}
+
+// Store current client reference for ZMODEM callbacks
+let currentZmodemClient = null;
+
+// Process data through ZMODEM sentry - returns data to display (or empty if consumed by ZMODEM)
+function processZmodemData(data, client) {
+  // Update current client reference
+  currentZmodemClient = client;
+  
+  // Convert to proper Buffer if needed
+  const buf = Buffer.isBuffer(data) ? data : Buffer.from(data, 'binary');
+  
+  // Debug: Check for ZMODEM signatures in hex
+  const hexData = buf.toString('hex');
+  const hasZRINIT = hexData.includes('2a2a184230') || hexData.includes('2a184230');
+  const hasZRQINIT = hexData.includes('2a2a184230') && hexData.includes('3030');
+  
+  // Log all incoming data for debugging
+  if (buf.length < 100) {
+    debugLog('Data received:', buf.length, 'bytes, hex:', hexData.substring(0, 60));
+  }
+  
+  if (hasZRINIT) debugLog('*** ZRINIT pattern detected in data! ***');
+  if (hasZRQINIT) debugLog('*** ZRQINIT pattern detected in data! ***');
+  
+  // If there's an active ZMODEM session, feed data to it
+  if (zmodemSession) {
+    try {
+      const uint8 = new Uint8Array(buf.buffer, buf.byteOffset, buf.length);
+      zmodemSession.consume(uint8);
+      debugLog('Fed', buf.length, 'bytes to active ZMODEM session');
+    } catch (err) {
+      debugLog('ZMODEM session consume error:', err.message || err);
+      // Reset on error
+      zmodemSession = null;
+    }
+    return; // Don't send to terminal during active transfer
+  }
+  
+  if (!zmodemSentry) {
+    debugLog('Initializing ZMODEM sentry');
+    // Initialize ZMODEM sentry for this connection
+    zmodemSentry = new Zmodem.Sentry({
+      to_terminal: (octets) => {
+        // Data that should go to terminal (not ZMODEM)
+        debugLog('Sentry to_terminal:', octets.length, 'bytes');
+        const termBuf = Buffer.from(octets);
+        const win = mainWindow;
+        if (win) win.webContents.send('term:data', termBuf.toString('binary'));
+      },
+      sender: (octets) => {
+        // Send data to BBS - use current client reference
+        debugLog('Sentry sender:', octets.length, 'bytes to BBS');
+        const sendBuf = Buffer.from(octets);
+        if (currentZmodemClient && currentZmodemClient.socket) {
+          currentZmodemClient.socket.write(sendBuf);
+        } else if (currentZmodemClient && currentZmodemClient.stream) {
+          currentZmodemClient.stream.write(sendBuf);
+        } else {
+          console.error('No client available for ZMODEM sender');
+        }
+      },
+      on_detect: (detection) => {
+        // ZMODEM session detected!
+        debugLog('*** ZMODEM SESSION DETECTED! ***', 'Role:', detection.get_session_role());
+        try {
+          // confirm() returns the session synchronously (not a Promise)
+          const zsession = detection.confirm();
+          debugLog('ZMODEM session confirmed, type:', zsession.type);
+          handleZmodemSession(zsession, currentZmodemClient);
+        } catch (err) {
+          debugLog('ZMODEM detection/confirm error:', err.message || err);
+        }
+      },
+      on_retract: () => {
+        debugLog('ZMODEM detection retracted');
+      }
+    });
+  }
+  
+  // Feed data to sentry - it will route appropriately
+  try {
+    // Create proper Uint8Array from Buffer
+    const uint8 = new Uint8Array(buf.buffer, buf.byteOffset, buf.length);
+    debugLog('Feeding', uint8.length, 'bytes to ZMODEM sentry');
+    zmodemSentry.consume(uint8);
+  } catch (err) {
+    // If ZMODEM parsing fails, just send to terminal
+    debugLog('ZMODEM consume error:', err.message || err);
+    const win = mainWindow;
+    if (win) win.webContents.send('term:data', buf.toString('binary'));
+  }
+}
+
+// Reset ZMODEM state (call on disconnect)
+function resetZmodemState() {
+  zmodemSession = null;
+  zmodemSentry = null;
+  pendingUpload = null;
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -82,6 +350,8 @@ class TelnetClient {
     this.socket.on('connect', () => {
       const win = this.getWin();
       if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'telnet' });
+      // Reset ZMODEM state for new connection
+      resetZmodemState();
       // Small delay to allow terminal to clear before processing buffered data
       setTimeout(() => {
         statusSent = true;
@@ -89,8 +359,8 @@ class TelnetClient {
           for (const data of initialBuffer) {
             const rendered = this._processTelnet(data);
             if (rendered && rendered.length) {
-              const str = rendered.toString('binary');
-              if (win) win.webContents.send('term:data', str);
+              // Route through ZMODEM detector
+              processZmodemData(rendered, this);
               if (this.logging && this.logStream) this.logStream.write(rendered);
             }
           }
@@ -106,9 +376,8 @@ class TelnetClient {
       }
       const rendered = this._processTelnet(data);
       if (rendered && rendered.length) {
-        const str = rendered.toString('binary');
-        const win = this.getWin();
-        if (win) win.webContents.send('term:data', str);
+        // Route through ZMODEM detector instead of directly to terminal
+        processZmodemData(rendered, this);
         if (this.logging && this.logStream) this.logStream.write(rendered);
       }
     });
@@ -122,6 +391,7 @@ class TelnetClient {
       const win = this.getWin();
       if (win) win.webContents.send('term:status', { type: 'disconnected' });
       if (this.logStream) { this.logStream.end(); this.logStream = null; }
+      resetZmodemState();
     });
 
     this.socket.connect(port, host);
@@ -130,6 +400,7 @@ class TelnetClient {
   disconnect() {
     try { if (this.socket) this.socket.destroy(); } catch {}
     this.socket = null;
+    resetZmodemState();
   }
 
   setSize(cols, rows) {
@@ -267,95 +538,7 @@ class TelnetClient {
   }
 }
 
-// Raw TCP client - no Telnet negotiation
-class RawClient {
-  constructor(getWin) {
-    this.getWin = getWin;
-    this.socket = null;
-    this.logging = false;
-    this.logStream = null;
-    this.protocol = 'raw';
-  }
-
-  connect(host, port) {
-    if (this.socket) this.disconnect();
-    this.socket = new net.Socket();
-    this.socket.setKeepAlive(true, 15000);
-    
-    // Buffer initial data until status is sent
-    let initialBuffer = [];
-    let statusSent = false;
-
-    this.socket.on('connect', () => {
-      const win = this.getWin();
-      if (win) win.webContents.send('term:status', { type: 'connected', host, port, protocol: 'raw' });
-      // Small delay to allow terminal to clear before processing buffered data
-      setTimeout(() => {
-        statusSent = true;
-        if (initialBuffer.length > 0) {
-          for (const data of initialBuffer) {
-            const str = data.toString('binary');
-            if (win) win.webContents.send('term:data', str);
-            if (this.logging && this.logStream) this.logStream.write(data);
-          }
-          initialBuffer = [];
-        }
-      }, 50);
-    });
-
-    this.socket.on('data', (data) => {
-      if (!statusSent) {
-        initialBuffer.push(data);
-        return;
-      }
-      const str = data.toString('binary');
-      const win = this.getWin();
-      if (win) win.webContents.send('term:data', str);
-      if (this.logging && this.logStream) this.logStream.write(data);
-    });
-
-    this.socket.on('error', (err) => {
-      const win = this.getWin();
-      if (win) win.webContents.send('term:status', { type: 'error', message: err.message });
-    });
-
-    this.socket.on('close', () => {
-      const win = this.getWin();
-      if (win) win.webContents.send('term:status', { type: 'disconnected' });
-      if (this.logStream) { this.logStream.end(); this.logStream = null; }
-    });
-
-    this.socket.connect(port, host);
-  }
-
-  disconnect() {
-    try { if (this.socket) this.socket.destroy(); } catch {}
-    this.socket = null;
-  }
-
-  setSize(cols, rows) {
-    // Raw TCP doesn't support window size negotiation
-  }
-
-  setLogging(enabled) {
-    this.logging = enabled;
-    if (enabled && !this.logStream) {
-      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const logPath = path.join(process.cwd(), 'logs', `session-${stamp}.bin`);
-      fs.mkdirSync(path.dirname(logPath), { recursive: true });
-      this.logStream = fs.createWriteStream(logPath);
-    } else if (!enabled && this.logStream) {
-      this.logStream.end();
-      this.logStream = null;
-    }
-  }
-
-  write(data) {
-    if (!this.socket) return;
-    const buf = Buffer.from(data, 'binary');
-    this.socket.write(buf);
-  }
-}
+// NOTE: Raw TCP connections removed for security - all connections now use Telnet or SSH
 
 // SSH Client using ssh2 library
 class SSHTerminalClient {
@@ -471,7 +654,7 @@ class SSHTerminalClient {
   }
 }
 
-// Auto-detecting client - tries to detect Telnet vs Raw
+// Auto-detecting client - detects Telnet negotiation and uses Telnet protocol
 class AutoDetectClient {
   constructor(getWin) {
     this.getWin = getWin;
@@ -548,20 +731,19 @@ class AutoDetectClient {
     this.detected = true;
     this.socket.setTimeout(0); // Clear timeout
     
+    // Always use Telnet protocol (raw TCP removed for security)
+    const finalProtocol = 'telnet';
+    
     const win = this.getWin();
-    if (win) win.webContents.send('term:status', { type: 'detected', protocol, host: this.host, port: this.port });
+    if (win) win.webContents.send('term:status', { type: 'detected', protocol: finalProtocol, host: this.host, port: this.port });
 
     // Destroy the detection socket
     const oldSocket = this.socket;
     this.socket = null;
     try { oldSocket.destroy(); } catch {}
 
-    // Create the appropriate client and reconnect
-    if (protocol === 'telnet') {
-      this.actualClient = new TelnetClient(this.getWin);
-    } else {
-      this.actualClient = new RawClient(this.getWin);
-    }
+    // Create Telnet client and reconnect
+    this.actualClient = new TelnetClient(this.getWin);
     
     if (this.logging) {
       this.actualClient.setLogging(true);
@@ -601,8 +783,6 @@ function createClient(protocol) {
   switch (protocol) {
     case 'ssh':
       return new SSHTerminalClient(getWindow);
-    case 'raw':
-      return new RawClient(getWindow);
     case 'telnet':
       return new TelnetClient(getWindow);
     case 'auto':
@@ -684,4 +864,84 @@ ipcMain.handle('savePhonebookEntry', async (_e, { action, index, entry, entries:
   fs.writeFileSync(file, JSON.stringify(phonebookEntries, null, 2));
   console.log('Phonebook saved:', phonebookEntries.length, 'entries');
   return true;
+});
+
+// === FILE TRANSFER PROTOCOLS (ZMODEM) ===
+// ZMODEM is now supported via zmodem.js library.
+// - Downloads: Auto-detected when BBS initiates transfer
+// - Uploads: Queue file, then start transfer from BBS menu
+
+ipcMain.handle('uploadFile', async (_e, { name, data, protocol }) => {
+  console.log(`File transfer requested: ${protocol} upload of ${name}`);
+  
+  if (protocol !== 'zmodem') {
+    return { 
+      success: false, 
+      error: `Only ZMODEM transfers are currently supported. Please select ZMODEM protocol.`
+    };
+  }
+  
+  if (!activeClient) {
+    return { success: false, error: 'Not connected to a BBS' };
+  }
+  
+  // Queue the file for upload - it will be sent when BBS initiates ZMODEM receive
+  pendingUpload = { name, data };
+  
+  sendTransferProgress(0, `File queued: ${name}. Start ZMODEM receive from BBS menu.`, { 
+    filename: name, 
+    direction: 'upload',
+    queued: true 
+  });
+  
+  return { 
+    success: true, 
+    message: `File "${name}" queued for upload. Now select ZMODEM receive from the BBS menu to start the transfer.`
+  };
+});
+
+ipcMain.handle('downloadFile', async (_e, { protocol }) => {
+  console.log(`File transfer requested: ${protocol} download`);
+  
+  if (protocol !== 'zmodem') {
+    return { 
+      success: false, 
+      error: `Only ZMODEM transfers are currently supported. Please select ZMODEM protocol.`
+    };
+  }
+  
+  if (!activeClient) {
+    return { success: false, error: 'Not connected to a BBS' };
+  }
+  
+  // Downloads are auto-detected when BBS initiates - just inform the user
+  sendTransferProgress(0, 'Ready to receive. Start ZMODEM send from BBS menu.', {
+    direction: 'download',
+    waiting: true
+  });
+  
+  return { 
+    success: true, 
+    message: 'Ready to receive files. Select a file to download from the BBS menu - ZMODEM transfer will start automatically.'
+  };
+});
+
+ipcMain.handle('cancelTransfer', async () => {
+  if (zmodemSession) {
+    try {
+      zmodemSession.abort();
+    } catch (e) {
+      console.error('Error aborting ZMODEM session:', e);
+    }
+    zmodemSession = null;
+  }
+  pendingUpload = null;
+  sendTransferProgress(0, 'Transfer cancelled', { cancelled: true });
+  return { success: true, message: 'Transfer cancelled' };
+});
+
+// Clear pending upload
+ipcMain.handle('clearPendingUpload', async () => {
+  pendingUpload = null;
+  return { success: true };
 });

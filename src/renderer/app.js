@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearchBtn');
   
+  // Section elements for show/hide
+  const phonebookSection = document.getElementById('phonebookSection');
+  const fileTransferSection = document.getElementById('fileTransferSection');
+  const connectionInfo = document.getElementById('connectionInfo');
+  
+  // File transfer elements
+  const transferProtocol = document.getElementById('transferProtocol');
+  const uploadBtn = document.getElementById('uploadBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const uploadFileInput = document.getElementById('uploadFileInput');
+  const transferStatus = document.getElementById('transferStatus');
+  const transferProgress = document.getElementById('transferProgress');
+  const progressFill = document.getElementById('progressFill');
+  const progressText = document.getElementById('progressText');
+  const cancelTransferBtn = document.getElementById('cancelTransferBtn');
+  
   // Modal elements
   const entryModal = document.getElementById('entryModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -49,8 +65,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     searchInput: !!searchInput,
     clearSearchBtn: !!clearSearchBtn,
     modalProtocol: !!modalProtocol,
-    sshCredentials: !!sshCredentials
+    sshCredentials: !!sshCredentials,
+    phonebookSection: !!phonebookSection,
+    fileTransferSection: !!fileTransferSection,
+    uploadBtn: !!uploadBtn,
+    downloadBtn: !!downloadBtn
   });
+
+  // Connection state
+  let isConnected = false;
+  let currentConnection = { host: '', port: 0, protocol: '' };
+  let isTransferring = false;
 
   // Helper function
   function setStatus(text) {
@@ -61,6 +86,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function setImportInfo(text) {
     if (importInfoEl) importInfoEl.textContent = text;
+  }
+
+  // Show/hide sections based on connection state
+  function showPhonebook() {
+    if (phonebookSection) phonebookSection.classList.remove('hidden');
+    if (fileTransferSection) fileTransferSection.classList.add('hidden');
+  }
+
+  function showFileTransfer(host, port, protocol) {
+    if (phonebookSection) phonebookSection.classList.add('hidden');
+    if (fileTransferSection) fileTransferSection.classList.remove('hidden');
+    if (connectionInfo) {
+      connectionInfo.textContent = `Connected to ${host}:${port} (${protocol.toUpperCase()})`;
+    }
+    if (transferStatus) transferStatus.textContent = 'ZMODEM ready. Downloads auto-detected, uploads queued then start from BBS.';
+  }
+
+  function setTransferStatus(text) {
+    if (transferStatus) transferStatus.textContent = text;
+  }
+
+  function updateProgress(percent) {
+    if (progressFill) progressFill.style.width = `${percent}%`;
+    if (progressText) progressText.textContent = `${Math.round(percent)}%`;
+  }
+
+  function showProgress() {
+    if (transferProgress) transferProgress.classList.remove('hidden');
+    updateProgress(0);
+  }
+
+  function hideProgress() {
+    if (transferProgress) transferProgress.classList.add('hidden');
   }
 
   // Show last import date if available
@@ -536,6 +594,178 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Import button or file input NOT FOUND!');
     }
 
+  // === FILE TRANSFER HANDLERS (ZMODEM) ===
+  
+  // Upload button - queue file for ZMODEM upload
+  if (uploadBtn && uploadFileInput) {
+    uploadBtn.addEventListener('click', () => {
+      if (!isConnected) {
+        setTransferStatus('Not connected to a BBS');
+        return;
+      }
+      if (isTransferring) {
+        setTransferStatus('Transfer already in progress');
+        return;
+      }
+      
+      const protocol = transferProtocol ? transferProtocol.value : 'zmodem';
+      if (protocol !== 'zmodem') {
+        setTransferStatus('Only ZMODEM transfers are supported. Please select ZMODEM.');
+        return;
+      }
+      
+      uploadFileInput.value = '';
+      uploadFileInput.click();
+    });
+    
+    uploadFileInput.addEventListener('change', async () => {
+      const file = uploadFileInput.files[0];
+      if (!file) return;
+      
+      const protocol = transferProtocol ? transferProtocol.value : 'zmodem';
+      setTransferStatus(`Queuing file: ${file.name}`);
+      
+      try {
+        // Read file as ArrayBuffer
+        const arrayBuffer = await file.arrayBuffer();
+        const fileData = Array.from(new Uint8Array(arrayBuffer));
+        
+        const result = await window.api.uploadFile({
+          name: file.name,
+          data: fileData,
+          protocol: protocol
+        });
+        
+        if (result.success) {
+          // File queued - user needs to start transfer from BBS
+          setTransferStatus(result.message);
+          showProgress();
+          updateProgress(0);
+        } else {
+          setTransferStatus(`Error: ${result.error}`);
+        }
+      } catch (err) {
+        console.error('Upload error:', err);
+        setTransferStatus(`Upload error: ${err.message}`);
+      }
+    });
+    
+    console.log('Upload button handler attached');
+  }
+  
+  // Download button - inform user to start from BBS
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', async () => {
+      if (!isConnected) {
+        setTransferStatus('Not connected to a BBS');
+        return;
+      }
+      if (isTransferring) {
+        setTransferStatus('Transfer already in progress');
+        return;
+      }
+      
+      const protocol = transferProtocol ? transferProtocol.value : 'zmodem';
+      if (protocol !== 'zmodem') {
+        setTransferStatus('Only ZMODEM transfers are supported. Please select ZMODEM.');
+        return;
+      }
+      
+      try {
+        const result = await window.api.downloadFile({ protocol: protocol });
+        
+        if (result.success) {
+          setTransferStatus(result.message);
+        } else {
+          setTransferStatus(`Error: ${result.error}`);
+        }
+      } catch (err) {
+        console.error('Download error:', err);
+        setTransferStatus(`Error: ${err.message}`);
+      }
+    });
+    
+    console.log('Download button handler attached');
+  }
+  
+  // Cancel transfer button
+  if (cancelTransferBtn) {
+    cancelTransferBtn.addEventListener('click', async () => {
+      await window.api.cancelTransfer();
+      setTransferStatus('Transfer cancelled');
+      hideProgress();
+      isTransferring = false;
+      if (uploadBtn) uploadBtn.disabled = false;
+      if (downloadBtn) downloadBtn.disabled = false;
+    });
+    
+    console.log('Cancel transfer button handler attached');
+  }
+  
+  // Debug log listener from main process
+  if (window.api.onDebugLog) {
+    window.api.onDebugLog((msg) => {
+      console.log('[MAIN DEBUG]', msg);
+    });
+    console.log('Debug log listener attached');
+  }
+  
+  // Transfer progress listener
+  window.api.onTransferProgress((progress) => {
+    console.log('Transfer progress:', progress);
+    
+    if (progress.percent !== undefined) {
+      updateProgress(progress.percent);
+      showProgress();
+    }
+    
+    if (progress.status) {
+      setTransferStatus(progress.status);
+    }
+    
+    // Handle transfer states
+    if (progress.complete) {
+      isTransferring = false;
+      if (uploadBtn) uploadBtn.disabled = false;
+      if (downloadBtn) downloadBtn.disabled = false;
+      // Keep progress bar visible for a moment to show completion
+      setTimeout(() => {
+        if (!isTransferring) hideProgress();
+      }, 2000);
+    } else if (progress.waiting || progress.queued) {
+      // Waiting for BBS to initiate
+      isTransferring = false;
+      if (uploadBtn) uploadBtn.disabled = false;
+      if (downloadBtn) downloadBtn.disabled = false;
+    } else if (progress.direction) {
+      // Active transfer
+      isTransferring = true;
+      if (uploadBtn) uploadBtn.disabled = true;
+      if (downloadBtn) downloadBtn.disabled = true;
+    }
+    
+    if (progress.cancelled) {
+      isTransferring = false;
+      if (uploadBtn) uploadBtn.disabled = false;
+      if (downloadBtn) downloadBtn.disabled = false;
+      hideProgress();
+    }
+  });
+  
+  // ZMODEM detection listener
+  window.api.onZmodemDetected((info) => {
+    console.log('ZMODEM detected:', info);
+    if (info.type === 'send') {
+      setTransferStatus('BBS ready to receive file...');
+    } else if (info.type === 'receive') {
+      setTransferStatus('BBS sending file...');
+    }
+    showProgress();
+    isTransferring = true;
+    if (uploadBtn) uploadBtn.disabled = true;
+    if (downloadBtn) downloadBtn.disabled = true;
+  });
+
   // Enter key triggers connect
   if (hostInput) {
     hostInput.onkeydown = (e) => {
@@ -671,6 +901,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.api.onStatus((s) => {
     console.log('Status update:', s);
     if (s.type === 'connected') {
+      isConnected = true;
+      currentConnection = { host: s.host, port: s.port, protocol: s.protocol || 'telnet' };
+      
       if (term) {
         // Send fixed terminal size to server
         window.api.resize({ cols: 80, rows: 25 });
@@ -683,11 +916,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       const protocolLabel = s.protocol ? ` (${s.protocol.toUpperCase()})` : '';
       setStatus(`Connected to ${s.host}:${s.port}${protocolLabel}`);
+      
+      // Show file transfer section, hide phonebook
+      showFileTransfer(s.host, s.port, s.protocol || 'telnet');
     } else if (s.type === 'detecting') {
       setStatus(`Detecting protocol for ${s.host}:${s.port}...`);
     } else if (s.type === 'detected') {
       setStatus(`Detected ${s.protocol.toUpperCase()} - reconnecting...`);
     } else if (s.type === 'disconnected') {
+      isConnected = false;
+      currentConnection = { host: '', port: 0, protocol: '' };
+      
       if (term) {
         // Disable alternate screen buffer and reset
         term.write('\x1B[?1049l'); // Disable alternate screen buffer
@@ -697,6 +936,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         term.write('Terminal Ready.... Select A BBS from phonebook to connect.\r\n');
       }
       setStatus('Disconnected');
+      
+      // Show phonebook, hide file transfer section
+      showPhonebook();
     } else if (s.type === 'error') {
       setStatus(`Error: ${s.message}`);
     }
